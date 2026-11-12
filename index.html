@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Eaglescliffe &amp; Yarm Handyman – Local Home Repairs (Concept Design)</title>
+  <title>Eaglescliffe &amp; Yarm Handyman – Local Home Repairs &amp; Odd-Job Docket (Concept Design)</title>
   <meta name="description" content="Draft concept website for Eaglescliffe &amp; Yarm Handyman: practical home repairs, shelving, flat-pack assembly and odd jobs across TS16 and TS15. Not the official site.">
-  <meta name="theme-color" content="#1B242B">
+  <meta name="theme-color" content="#18222B">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jetbrains-mono-latin-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -26,240 +27,462 @@
     </div>
   </div>
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand__mark" src="images/logo-mark.svg" width="42" height="42" alt="">
-        <span class="brand__copy">
-          <span class="brand__name">Eaglescliffe &amp; Yarm Handyman</span>
-          <span class="brand__tag">Home Repairs · TS16 &amp; TS15</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
-        <span>Menu</span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html" aria-current="page">Home</a></li>
-          <li><a class="site-nav__link" href="services.html">Services &amp; Jobs</a></li>
-          <li><a class="site-nav__link" href="areas.html">Areas Covered</a></li>
-          <li><a class="site-nav__link" href="quote.html">Request a Quote</a></li>
-        </ul>
-        <div class="header-cta-group">
-          <a class="btn btn--primary btn--sm" href="quote.html">
-            <span>Get a Quote</span>
-            <span class="job-badge" data-job-count hidden>0</span>
-          </a>
-        </div>
-      </nav>
+  <!-- Stamped Workshop Docket / Brass-Plated Toolchest Header -->
+  <header class="docket-header">
+    <div class="spec-ticker">
+      <div class="wrap spec-ticker__inner">
+        <span class="spec-ticker__lead">LOCAL PATCH: EAGLESCLIFFE TS16 &harr; YARM TS15 &middot; SMALL REPAIRS TO HALF-DAY LISTS &middot; NO CALL-OUT GUESSWORK</span>
+        <span class="spec-ticker__right">SHEET REF // EY-01</span>
+      </div>
     </div>
+
+    <div class="toolchest-bar">
+      <div class="wrap toolchest-bar__inner">
+        <a class="brass-plate" href="index.html">
+          <img class="brass-plate__mark" src="images/logo-mark.svg" width="38" height="38" alt="">
+          <span class="brass-plate__copy">
+            <span class="brass-plate__name">Eaglescliffe &amp; Yarm Handyman</span>
+            <span class="brass-plate__serial">WORKSHOP DOCKET // TS16 &amp; TS15 HOME REPAIRS</span>
+          </span>
+        </a>
+
+        <div class="toolchest-meta">
+          <a class="docket-tally-pill" href="quote.html">
+            <span data-docket-tally-text>Your Docket: 0 jobs</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+
+          <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+            <span>Docket</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="folder-nav-rail" id="site-nav" aria-label="Main workshop navigation">
+      <div class="wrap">
+        <ul class="folder-tabs">
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="index.html" aria-current="page">
+              <span class="folder-tab__idx">01 /</span>
+              <span>JOB PAD</span>
+            </a>
+          </li>
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="services.html">
+              <span class="folder-tab__idx">02 /</span>
+              <span>TRADE LIST</span>
+            </a>
+          </li>
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="areas.html">
+              <span class="folder-tab__idx">03 /</span>
+              <span>TS16 &amp; TS15 PATCH</span>
+            </a>
+          </li>
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="quote.html">
+              <span class="folder-tab__idx">04 /</span>
+              <span>SEND DOCKET</span>
+              <span class="job-badge" data-job-count hidden>0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Local Home Repairs · Eaglescliffe &amp; Yarm</span>
-          <h1>Tidy, dependable help for the jobs on your home to-do list.</h1>
-          <p class="lead">
-            From sticking doors, shelving and curtain poles to flat-pack furniture and everyday household repairs across <strong>Eaglescliffe</strong> and <strong>Yarm</strong>. Send your job list online for a straightforward quote.
-          </p>
+    <!-- Hero Blueprint Workbench + Cream-Lined Fridge Odd-Job Clipboard -->
+    <section class="blueprint-stage" aria-labelledby="hero-heading">
+      <div class="ruler-strip" aria-hidden="true"></div>
 
-          <div class="hero-actions">
-            <a class="btn btn--primary" href="quote.html">
-              <span>Request a Free Quote</span>
-              <span class="job-badge" data-job-count hidden>0</span>
-            </a>
-            <a class="btn btn--secondary" href="services.html">Build Your Odd-Job List</a>
+      <div class="wrap hero-workbench">
+        <div class="workbench-grid">
+          <!-- Left Column (~52%): Workshop Brief & Instant Patch Checker -->
+          <div>
+            <div class="stamp-row">
+              <span class="stamp-badge">TS16 &middot; EAGLESCLIFFE</span>
+              <span class="stamp-badge">TS15 &middot; YARM</span>
+              <span class="stamp-badge stamp-badge--outline">SINGLE REPAIRS TO HALF-DAY LISTS</span>
+            </div>
+
+            <h1 id="hero-heading">Got a list of five small jobs stuck to the fridge?</h1>
+
+            <p class="lead">
+              Instead of waiting weeks for separate trades over a catching door, flat-pack wardrobe or alcove shelf, put your whole household to-do list on one straightforward docket across <strong>Eaglescliffe</strong> and <strong>Yarm</strong>.
+            </p>
+
+            <!-- Interactive Postcode / Village Instant Patch Checker -->
+            <div class="patch-checker" data-patch-checker>
+              <div class="patch-checker__head">
+                <p class="patch-checker__title">Instant Local Patch Checker</p>
+                <span class="patch-checker__hint">Tap your town or village:</span>
+              </div>
+
+              <div class="patch-pills" role="group" aria-label="Check local coverage by town or village">
+                <button type="button" class="patch-pill" data-patch-pill="eaglescliffe" aria-pressed="true">Eaglescliffe TS16</button>
+                <button type="button" class="patch-pill" data-patch-pill="yarm" aria-pressed="false">Yarm TS15</button>
+                <button type="button" class="patch-pill" data-patch-pill="egglescliffe" aria-pressed="false">Egglescliffe Village</button>
+                <button type="button" class="patch-pill" data-patch-pill="kirklevington" aria-pressed="false">Kirklevington</button>
+                <button type="button" class="patch-pill" data-patch-pill="aislaby" aria-pressed="false">Aislaby</button>
+                <button type="button" class="patch-pill" data-patch-pill="preston" aria-pressed="false">Preston-on-Tees</button>
+              </div>
+
+              <div class="patch-readout" data-patch-readout aria-live="polite">
+                <div class="patch-readout__top">
+                  <span class="patch-readout__stamp" data-patch-stamp>CORE PATCH &middot; TS16</span>
+                </div>
+                <p class="patch-readout__text">
+                  <span data-patch-note>Core local coverage across Eaglescliffe (TS16) — including Yarm Road, Orchard Estate, Swinburne Road, Albert Road and modern residential estates. </span>
+                  <span class="ph" data-patch-ph>[Exact TS16 sub-areas – owner to confirm]</span>
+                </p>
+                <a class="patch-readout__link" data-patch-link href="quote.html?area=eaglescliffe">
+                  Pre-select this area on Quote Docket &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- Honest Contact & Hours Ledger -->
+            <div class="bench-specs" id="contact-details">
+              <div>
+                <span class="bench-spec__k">Direct Phone</span>
+                <span class="bench-spec__v"><span class="ph">[Phone – owner to confirm]</span></span>
+              </div>
+              <div>
+                <span class="bench-spec__k">Working Hours</span>
+                <span class="bench-spec__v"><span class="ph">[Hours – owner to confirm]</span></span>
+              </div>
+              <div>
+                <span class="bench-spec__k">Rate Structure</span>
+                <span class="bench-spec__v"><span class="ph">[Rates – owner to confirm]</span></span>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-facts" id="contact-details">
-            <div>
-              <span class="hero-fact__k">Core Area</span>
-              <span class="hero-fact__v">Eaglescliffe &amp; Yarm</span>
+          <!-- Right Column (~48%): Physical Tactile Cream-Lined Fridge Odd-Job Clipboard -->
+          <aside class="clipboard-board" aria-labelledby="clipboard-title">
+            <!-- Custom Inline SVG Brass Bulldog Clip -->
+            <svg class="clipboard-clip" viewBox="0 0 156 64" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="brassClipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#F2CC82"/>
+                  <stop offset="45%" stop-color="#C88E38"/>
+                  <stop offset="100%" stop-color="#8B5A15"/>
+                </linearGradient>
+                <linearGradient id="brassJawGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#9A671E"/>
+                  <stop offset="50%" stop-color="#E6B665"/>
+                  <stop offset="100%" stop-color="#8F5D18"/>
+                </linearGradient>
+              </defs>
+              <!-- Cast shadow onto board -->
+              <rect x="20" y="34" width="116" height="24" rx="4" fill="rgba(24,34,43,0.28)"/>
+              <!-- Top thumb tab with hanging hole -->
+              <path d="M56 4 H100 C105 4 108 8 108 13 V28 H48 V13 C48 8 51 4 56 4 Z" fill="url(#brassClipGrad)" stroke="#18222B" stroke-width="2.2"/>
+              <circle cx="78" cy="14" r="5.5" fill="#18222B"/>
+              <circle cx="78" cy="14" r="3.5" fill="#F3EFE6"/>
+              <!-- Spring barrel -->
+              <rect x="34" y="24" width="88" height="11" rx="4" fill="#9E6A20" stroke="#18222B" stroke-width="2"/>
+              <line x1="50" y1="25" x2="50" y2="34" stroke="#18222B" stroke-width="1.5"/>
+              <line x1="64" y1="25" x2="64" y2="34" stroke="#18222B" stroke-width="1.5"/>
+              <line x1="92" y1="25" x2="92" y2="34" stroke="#18222B" stroke-width="1.5"/>
+              <line x1="106" y1="25" x2="106" y2="34" stroke="#18222B" stroke-width="1.5"/>
+              <!-- Wide clamping jaw -->
+              <rect x="16" y="33" width="124" height="20" rx="3" fill="url(#brassJawGrad)" stroke="#18222B" stroke-width="2.2"/>
+              <!-- Brass rivets -->
+              <circle cx="30" cy="43" r="3" fill="#F5D798" stroke="#18222B" stroke-width="1.4"/>
+              <circle cx="126" cy="43" r="3" fill="#F5D798" stroke="#18222B" stroke-width="1.4"/>
+              <line x1="44" y1="43" x2="112" y2="43" stroke="#18222B" stroke-width="1.2" stroke-dasharray="3 3"/>
+            </svg>
+
+            <div class="clipboard-sheet">
+              <div class="clipboard-head">
+                <div>
+                  <span class="clipboard-head__sub">FRIDGE ODD-JOB PAD // TAP TO TICK</span>
+                  <h2 class="clipboard-head__title" id="clipboard-title">Build your visit list right here</h2>
+                </div>
+                <button type="button" class="clipboard-clear-btn" data-clipboard-clear>Clear</button>
+              </div>
+
+              <ul class="clipboard-list" aria-label="Common household odd jobs">
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-1">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-1" class="clipboard-input" type="checkbox" data-hero-job value="Ease sticking internal door">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Ease a sticking internal door</span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-2">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-2" class="clipboard-input" type="checkbox" data-hero-job value="Flat-pack wardrobe / chest assembly">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Flat-pack wardrobe / chest assembly</span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-3">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-3" class="clipboard-input" type="checkbox" data-hero-job value="Fix dripping tap or re-silicone bath">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Fix dripping tap or re-silicone bath</span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-4">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-4" class="clipboard-input" type="checkbox" data-hero-job value="Hang heavy mirror, blinds or TV bracket">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Hang heavy mirror, blinds or TV bracket</span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-5">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-5" class="clipboard-input" type="checkbox" data-hero-job value="Garden gate latch or fence panel repair">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Garden gate latch or fence panel repair</span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-6">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-6" class="clipboard-input" type="checkbox" data-hero-job value="Put up alcove shelving">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Put up alcove shelving</span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-7">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-7" class="clipboard-input" type="checkbox" data-hero-job value="Replace broken socket faceplate / light fitting [scope to confirm]">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Replace broken socket faceplate / light fitting <span class="ph">[scope to confirm]</span></span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+
+                <li class="clipboard-row">
+                  <label class="clipboard-label" for="hero-job-8">
+                    <span class="clipboard-check-cell">
+                      <input id="hero-job-8" class="clipboard-input" type="checkbox" data-hero-job value="Draught-proofing & door furniture">
+                      <span class="clipboard-box" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4L16 5.5"/></svg></span>
+                    </span>
+                    <span class="clipboard-job-text">Draught-proofing &amp; door furniture</span>
+                    <span class="clipboard-row-stamp" aria-hidden="true">Ticked</span>
+                  </label>
+                </li>
+              </ul>
+
+              <div class="clipboard-footer">
+                <div class="clipboard-footer__status" aria-live="polite">
+                  <span data-clipboard-tally>Your Docket: 0 jobs ticked</span>
+                  <a href="services.html" style="color: #F6EFE2; font-size: 0.72rem;">+ Full 12-job list</a>
+                </div>
+                <a class="btn clipboard-footer__cta" href="quote.html">
+                  <span data-clipboard-cta-label>Carry Jobs to Quote Form &rarr;</span>
+                </a>
+              </div>
             </div>
-            <div>
-              <span class="hero-fact__k">Direct Phone</span>
-              <span class="hero-fact__v"><span class="ph">[Phone – owner to confirm]</span></span>
-            </div>
-            <div>
-              <span class="hero-fact__k">Working Hours</span>
-              <span class="hero-fact__v"><span class="ph">[Hours – owner to confirm]</span></span>
-            </div>
-          </div>
+          </aside>
         </div>
-
-        <figure class="photo-frame">
-          <img
-            src="images/hero-home-repairs.jpg"
-            width="1440"
-            height="803"
-            alt="Hands fitting a brass hinge onto a solid oak panelled door in a tidy hallway with a canvas tool bag and spirit level on a dust sheet"
-            fetchpriority="high"
-          >
-          <figcaption>
-            <span>Careful indoor carpentry, fittings &amp; household repairs</span>
-            <span class="illus-tag">Illustrative image</span>
-          </figcaption>
-        </figure>
       </div>
+
+      <div class="ruler-strip ruler-strip--top" aria-hidden="true"></div>
     </section>
 
-    <div class="rule-ticks" aria-hidden="true"></div>
-
-    <!-- Core Job Categories Overview -->
-    <section class="section">
+    <!-- 3-Panel Workshop Contact-Sheet Strip (FIG. 01 · FIG. 02 · FIG. 03) -->
+    <section class="section" aria-labelledby="plates-heading">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">What Can Be Tackled</span>
-            <h2>One visit for a single repair—or a full list of odd jobs.</h2>
+            <div class="stamp-row">
+              <span class="stamp-badge stamp-badge--terracotta">TECHNICAL CONTACT SHEET // PLATES 01–03</span>
+            </div>
+            <h2 id="plates-heading">Tidy indoor craft, accurate fixings &amp; local Teesside homes.</h2>
             <p class="lead">
-              Typical household jobs requested by homeowners in Yarm and Eaglescliffe. <span class="ph">[Exact service list – owner to confirm]</span>
+              Typical household repairs and installations handled across period cottages, townhouses and family estates. <span class="ph">[Exact service list – owner to confirm]</span>
             </p>
           </div>
-          <a class="btn btn--secondary btn--sm" href="services.html">See full job checklist &rarr;</a>
+          <a class="btn btn--secondary btn--sm" href="services.html">Open Full Trade List &rarr;</a>
         </div>
 
-        <div class="card-grid">
-          <article class="card">
-            <span class="card__num">01 · HANGING &amp; MOUNTING</span>
-            <h3>Shelves, Blinds, Mirrors &amp; TVs</h3>
-            <p>Level, secure fixings into plasterboard, brick or stud walls with the right wall anchors.</p>
-            <ul>
-              <li>Floating &amp; alcove shelving</li>
-              <li>Curtain poles, tracks &amp; blinds</li>
-              <li>Heavy mirrors, frames &amp; TV brackets</li>
-            </ul>
-          </article>
+        <div class="contact-sheet">
+          <figure class="plate-card">
+            <div class="plate-card__bar">
+              <span class="plate-card__fig">FIG. 01 // JOINERY &amp; HARDWARE</span>
+              <span>SPEC 16.1</span>
+            </div>
+            <div class="plate-card__media">
+              <img
+                src="images/hero-home-repairs.jpg"
+                width="1440"
+                height="803"
+                alt="Hands fitting a brass hinge onto a solid oak panelled door in a tidy hallway with a canvas tool bag and spirit level on a dust sheet"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              <span class="plate-card__caption-text">Internal door easing, brass hinges, latches, handles &amp; neat woodwork adjustments</span>
+              <span class="plate-card__meta-row">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--iron-soft);">DUST SHEETS DOWN</span>
+                <span class="illus-tag">Illustrative image</span>
+              </span>
+            </figcaption>
+          </figure>
 
-          <article class="card">
-            <span class="card__num">02 · DOORS &amp; JOINERY REPAIRS</span>
-            <h3>Doors, Locks, Handles &amp; Trim</h3>
-            <p>Sorting everyday wear and tear on internal doors, cupboards and woodwork.</p>
-            <ul>
-              <li>Easing sticking or catching doors</li>
-              <li>Replacing handles, latches &amp; hinges</li>
-              <li>Skirting, architrave &amp; draught-proofing</li>
-            </ul>
-          </article>
+          <figure class="plate-card">
+            <div class="plate-card__bar">
+              <span class="plate-card__fig">FIG. 02 // ALCOVES &amp; FIXINGS</span>
+              <span>SPEC 16.2</span>
+            </div>
+            <div class="plate-card__media">
+              <img
+                src="images/services-shelving-alcove.jpg"
+                width="1200"
+                height="896"
+                alt="Solid oak floating shelves fitted into a living room chimney alcove with a spirit level and fixings on a dust sheet below"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              <span class="plate-card__caption-text">Spirit-level alcove shelving, heavy mirrors, curtain poles &amp; TV brackets into brick or stud</span>
+              <span class="plate-card__meta-row">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--iron-soft);">PROPER WALL ANCHORS</span>
+                <span class="illus-tag">Illustrative image</span>
+              </span>
+            </figcaption>
+          </figure>
 
-          <article class="card">
-            <span class="card__num">03 · ASSEMBLY &amp; FITTINGS</span>
-            <h3>Flat-Pack Furniture &amp; Storage</h3>
-            <p>Clean, sturdy assembly and wall-strapping without spare screws or packaging clutter left behind.</p>
-            <ul>
-              <li>Wardrobes, chests, beds &amp; desks</li>
-              <li>Safety wall-anchoring for tall units</li>
-              <li>Garden furniture &amp; shed storage racks</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="card__num">04 · WET ROOMS &amp; EXTERIOR</span>
-            <h3>Resealing, Touch-Ups &amp; Garden Jobs</h3>
-            <p>Preventative maintenance indoors and outside to keep your home watertight and neat.</p>
-            <ul>
-              <li>Fresh bath, shower &amp; worktop silicone</li>
-              <li>Minor wall filling &amp; making good</li>
-              <li>Fence panel, gate latch &amp; shed repairs</li>
-            </ul>
-          </article>
+          <figure class="plate-card">
+            <div class="plate-card__bar">
+              <span class="plate-card__fig">FIG. 03 // TS16 &amp; TS15 PATCH</span>
+              <span>SPEC 15.9</span>
+            </div>
+            <div class="plate-card__media">
+              <img
+                src="images/areas-brick-houses.jpg"
+                width="1440"
+                height="803"
+                alt="Warm red-brick period townhouses with pantile roofs beside a tree-lined riverside walk in evening sunlight"
+                loading="lazy"
+              >
+            </div>
+            <figcaption>
+              <span class="plate-card__caption-text">Dedicated to Eaglescliffe, Yarm &amp; surrounding villages without A19/A66 travel delays</span>
+              <span class="plate-card__meta-row">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--iron-soft);">LOCAL ARRIVAL WINDOWS</span>
+                <span class="illus-tag">Illustrative image</span>
+              </span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="section section--alt">
+    <!-- "How a Half-Day List Works" — 3-Step Carpenter's Ruler Timeline -->
+    <section class="section section--alt" aria-labelledby="timeline-heading">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Straightforward Booking</span>
-            <h2>How getting a quote works</h2>
-            <p class="lead">No call-centre middlemen—just clear communication and agreed expectations before any tools come out.</p>
+            <div class="stamp-row">
+              <span class="stamp-badge">FOLDING-RULE WORKFLOW // 0MM &ndash; 300MM</span>
+            </div>
+            <h2 id="timeline-heading">How a half-day odd-job list works</h2>
+            <p class="lead">
+              No call-centre middlemen and no vague arrival windows—just a clear docket agreed before any tools come out.
+            </p>
           </div>
         </div>
 
-        <div class="card-grid">
-          <article class="card">
-            <span class="card__num">STEP 1</span>
-            <h3>Send your job list</h3>
-            <p>Tick the jobs you need on our <a href="services.html">Services page</a> or fill in the <a href="quote.html">2-minute quote form</a> with a short description.</p>
+        <div class="ruler-timeline">
+          <article class="ruler-step">
+            <div class="ruler-step__measure">
+              <span>STEP 01 // TICK YOUR LIST</span>
+              <span>000 mm</span>
+            </div>
+            <div class="ruler-step__body">
+              <h3>Tick your list on the pad</h3>
+              <p>
+                Use the <a href="#clipboard-title">hero fridge clipboard</a> or the <a href="services.html">full trade list</a> to bundle one awkward repair—or five nagging household jobs—onto one enquiry.
+              </p>
+            </div>
           </article>
 
-          <article class="card">
-            <span class="card__num">STEP 2</span>
-            <h3>Clear price &amp; slot agreed</h3>
-            <p>Receive a clear estimate—whether priced per job, hourly or half-day <span class="ph">[Rates – owner to confirm]</span>—and agree a convenient time.</p>
+          <article class="ruler-step">
+            <div class="ruler-step__measure">
+              <span>STEP 02 // UPFRONT QUOTE</span>
+              <span>150 mm</span>
+            </div>
+            <div class="ruler-step__body">
+              <h3>Honest quote confirmed upfront</h3>
+              <p>
+                Receive a clear price before booking—whether per job, hourly or half-day <span class="ph">[Call-out / hourly / half-day rate – owner to confirm]</span>—and agree a convenient slot.
+              </p>
+            </div>
           </article>
 
-          <article class="card">
-            <span class="card__num">STEP 3</span>
-            <h3>Dust sheets down, job done</h3>
-            <p>Work is carried out tidily with floors &amp; surfaces protected, and everything cleaned up before leaving.</p>
+          <article class="ruler-step">
+            <div class="ruler-step__measure">
+              <span>STEP 03 // ONE TIDY VISIT</span>
+              <span>300 mm</span>
+            </div>
+            <div class="ruler-step__body">
+              <h3>Sorted in one tidy visit</h3>
+              <p>
+                Dust sheets go down first, the whole list is worked through methodically, flat-pack cardboard is stacked neatly, and floors are left spotless.
+              </p>
+            </div>
           </article>
         </div>
 
-        <div class="notice-box" style="margin-top: 1.75rem;">
-          <h3>Upfront rates &amp; insurance details</h3>
+        <div class="notice-box" style="margin-top: 1.65rem;">
+          <h3>Workshop specification &amp; insurance placeholders</h3>
           <p>
-            Pricing structure: <span class="ph">[Call-out / hourly / half-day rate – owner to confirm]</span> ·
-            Insurance: <span class="ph">[Public liability insurance cover – owner to confirm]</span>
+            Pricing structure: <span class="ph">[Call-out / hourly / half-day rate – owner to confirm]</span> &middot;
+            Public liability cover: <span class="ph">[Public liability insurance cover – owner to confirm]</span> &middot;
+            Trade scope: <span class="ph">[Owner's exact trade qualifications &amp; exclusions – owner to confirm]</span>
           </p>
-          <p style="font-size: 0.9rem; color: var(--ink-soft);">
-            <strong>Click-to-call note (concept demo):</strong> Once confirmed by the owner, the phone number slot (<span class="ph">[Phone – owner to confirm]</span>) activates one-tap calling across every page and mobile bar.
+          <p style="font-size: 0.88rem; color: var(--iron-soft); margin-top: 0.55rem;">
+            <strong>Click-to-call demo note:</strong> Once confirmed by the owner, <span class="ph">[Phone – owner to confirm]</span> activates direct one-tap calling across the header and mobile dock.
           </p>
         </div>
-      </div>
-    </section>
-
-    <!-- Local Focus Split Banner -->
-    <section class="section section--dark">
-      <div class="wrap split">
-        <div>
-          <span class="eyebrow" style="background: rgba(242, 198, 120, 0.16); color: var(--brass-light);">Local to TS16 &amp; TS15</span>
-          <h2>Focused on Eaglescliffe &amp; Yarm homes</h2>
-          <p>
-            Focusing locally means less time stuck on the A19 or A66 and more reliable arrival windows for homeowners across Eaglescliffe, Yarm and nearby villages <span class="ph ph--on-dark">[Exact radius – owner to confirm]</span>.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn--primary" href="quote.html">Request a Quote</a>
-            <a class="btn btn--secondary" href="areas.html" style="background: transparent; color: #fff; border-color: rgba(255,255,255,0.5);">Check Areas Covered</a>
-          </div>
-        </div>
-
-        <figure class="photo-frame" style="background: #232E36; border-color: rgba(255,255,255,0.14);">
-          <img
-            src="images/areas-brick-houses.jpg"
-            width="1440"
-            height="803"
-            alt="Warm red-brick period townhouses with pantile roofs beside a tree-lined riverside walk in evening sunlight"
-            loading="lazy"
-          >
-          <figcaption style="color: #D0D8DF;">
-            <span>Serving period cottages, townhouses &amp; modern estates across TS16 &amp; TS15</span>
-            <span class="illus-tag" style="background: rgba(255,255,255,0.12); color: #F6F3EC;">Illustrative image</span>
-          </figcaption>
-        </figure>
       </div>
     </section>
   </main>
 
-  <!-- Site Footer -->
+  <!-- Workshop Site Footer -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
         <div>
           <h3>Eaglescliffe &amp; Yarm Handyman</h3>
-          <p style="margin-top: 0; color: #C2CDD5;">
-            Local home repairs, fittings, assembly and odd jobs in Eaglescliffe (TS16) &amp; Yarm (TS15).
+          <p style="margin-top: 0; color: #C6D1DA;">
+            Local home repairs, fittings, flat-pack assembly and odd-job lists in Eaglescliffe (TS16) &amp; Yarm (TS15).
           </p>
           <p style="margin-bottom: 0;">
             Phone: <span class="ph ph--on-dark">[Phone – owner to confirm]</span><br>
@@ -268,24 +491,24 @@
         </div>
 
         <div>
-          <h3>Pages</h3>
+          <h3>Workshop Docket</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services &amp; Odd-Job List</a></li>
-            <li><a href="areas.html">Areas Covered (TS16 &amp; TS15)</a></li>
-            <li><a href="quote.html">Request a Quote</a></li>
+            <li><a href="index.html">01 / Job Pad (Home)</a></li>
+            <li><a href="services.html">02 / Trade List &amp; Checklist</a></li>
+            <li><a href="areas.html">03 / TS16 &amp; TS15 Patch</a></li>
+            <li><a href="quote.html">04 / Send Quote Docket</a></li>
           </ul>
         </div>
 
         <div>
-          <h3>Area Map</h3>
+          <h3>Local Patch Map</h3>
           <ul>
             <li>
               <a href="https://www.google.com/maps/search/?api=1&amp;query=Eaglescliffe+and+Yarm+TS16+TS15" target="_blank" rel="noopener noreferrer">
                 View Eaglescliffe &amp; Yarm on Google Maps &nearr;
               </a>
             </li>
-            <li style="color: #AEB9C2; font-size: 0.88rem;">
+            <li style="color: #B4C0CA; font-size: 0.86rem;">
               Hours: <span class="ph ph--on-dark">[Working hours – owner to confirm]</span>
             </li>
           </ul>
@@ -300,11 +523,11 @@
     </div>
   </footer>
 
-  <!-- Sticky Mobile Quick-Action Bar -->
+  <!-- Solid Opaque Sticky Mobile Quick-Action Dock -->
   <div class="mobile-dock" role="region" aria-label="Quick actions">
     <a class="btn btn--call" href="#contact-details">Call: [To confirm]</a>
     <a class="btn btn--primary" href="quote.html">
-      <span>Get a Quote</span>
+      <span>Send Docket</span>
       <span class="job-badge" data-job-count hidden>0</span>
     </a>
   </div>

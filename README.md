@@ -11,3 +11,4 @@ Speculative draft concept website prepared by **Mark Aszkenasy** (`tedotedo`).
 - `services.html` — Interactive odd-job checklist synced to the quote form
 - `areas.html` — Eaglescliffe (`TS16`), Yarm (`TS15`) & surrounding village coverage
 - `quote.html` — Accessible client-side demo quote enquiry form (transmits nothing externally)
+

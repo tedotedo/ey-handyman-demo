@@ -62,3 +62,4 @@ Every bracketed `[...]` item in the concept site that needs a quick yes/no or fi
 - [ ] **Exact Coverage Radius (`[Exact TS16 sub-areas – owner to confirm]`, `[Exact TS15 sub-areas – owner to confirm]`, `[Surrounding villages & travel radius – owner to confirm]`):** Confirm outlying villages (Ingleby Barwick, Kirklevington, Hutton Rudby, Stockton, etc.).
 - [ ] **Registered Business / Sole Trader Footer Details (`[Registered town / base details – owner to confirm]`):** Trading name / sole trader or Ltd details if applicable, and preferred domain (`eyhandyman.co.uk`).
 - [ ] **Photos (Optional post-launch upgrade):** Swap or supplement the 3 `"Illustrative image"` demo photographs with the owner's own photos of completed work if available.
+

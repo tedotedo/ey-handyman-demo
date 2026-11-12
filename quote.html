@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Request a Quote – Eaglescliffe &amp; Yarm Handyman (Concept Design)</title>
-  <meta name="description" content="Send your odd-job list and request a quote from Eaglescliffe &amp; Yarm Handyman. Concept design demo.">
-  <meta name="theme-color" content="#1B242B">
+  <title>Send Quote Docket – Eaglescliffe &amp; Yarm Handyman (Concept Design)</title>
+  <meta name="description" content="Send your odd-job docket and request a quote from Eaglescliffe &amp; Yarm Handyman. Concept design demo.">
+  <meta name="theme-color" content="#18222B">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jetbrains-mono-latin-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Persistent Concept Banner -->
   <div class="concept-banner" role="region" aria-label="Concept website notice">
     <div class="wrap">
       <p class="concept-banner__text">
@@ -25,198 +27,246 @@
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand__mark" src="images/logo-mark.svg" width="42" height="42" alt="">
-        <span class="brand__copy">
-          <span class="brand__name">Eaglescliffe &amp; Yarm Handyman</span>
-          <span class="brand__tag">Home Repairs · TS16 &amp; TS15</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
-        <span>Menu</span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Home</a></li>
-          <li><a class="site-nav__link" href="services.html">Services &amp; Jobs</a></li>
-          <li><a class="site-nav__link" href="areas.html">Areas Covered</a></li>
-          <li><a class="site-nav__link" href="quote.html" aria-current="page">Request a Quote</a></li>
-        </ul>
-        <div class="header-cta-group">
-          <a class="btn btn--primary btn--sm" href="#quote-form">
-            <span>Quote Form</span>
-            <span class="job-badge" data-job-count hidden>0</span>
-          </a>
-        </div>
-      </nav>
+  <!-- Stamped Workshop Docket Header -->
+  <header class="docket-header">
+    <div class="spec-ticker">
+      <div class="wrap spec-ticker__inner">
+        <span class="spec-ticker__lead">LOCAL PATCH: EAGLESCLIFFE TS16 &harr; YARM TS15 &middot; SMALL REPAIRS TO HALF-DAY LISTS &middot; NO CALL-OUT GUESSWORK</span>
+        <span class="spec-ticker__right">SHEET REF // EY-04</span>
+      </div>
     </div>
+
+    <div class="toolchest-bar">
+      <div class="wrap toolchest-bar__inner">
+        <a class="brass-plate" href="index.html">
+          <img class="brass-plate__mark" src="images/logo-mark.svg" width="38" height="38" alt="">
+          <span class="brass-plate__copy">
+            <span class="brass-plate__name">Eaglescliffe &amp; Yarm Handyman</span>
+            <span class="brass-plate__serial">WORKSHOP DOCKET // TS16 &amp; TS15 HOME REPAIRS</span>
+          </span>
+        </a>
+
+        <div class="toolchest-meta">
+          <a class="docket-tally-pill" href="#quote-form">
+            <span data-docket-tally-text>Your Docket: 0 jobs</span>
+            <span aria-hidden="true">&darr;</span>
+          </a>
+
+          <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+            <span>Docket</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="folder-nav-rail" id="site-nav" aria-label="Main workshop navigation">
+      <div class="wrap">
+        <ul class="folder-tabs">
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="index.html">
+              <span class="folder-tab__idx">01 /</span>
+              <span>JOB PAD</span>
+            </a>
+          </li>
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="services.html">
+              <span class="folder-tab__idx">02 /</span>
+              <span>TRADE LIST</span>
+            </a>
+          </li>
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="areas.html">
+              <span class="folder-tab__idx">03 /</span>
+              <span>TS16 &amp; TS15 PATCH</span>
+            </a>
+          </li>
+          <li class="folder-tabs__item">
+            <a class="folder-tab" href="quote.html" aria-current="page">
+              <span class="folder-tab__idx">04 /</span>
+              <span>SEND DOCKET</span>
+              <span class="job-badge" data-job-count hidden>0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
-    <section class="page-hero">
+    <section class="blueprint-stage page-docket-hero">
       <div class="wrap">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a> / <span>Request a Quote</span>
+          <a href="index.html">01 / Job Pad</a> &middot; <span>04 / Send Quote Docket</span>
         </nav>
-        <h1>Send your job list for a straightforward quote</h1>
+        <div class="stamp-row">
+          <span class="stamp-badge">CLIENT-SIDE CONCEPT DOCKET</span>
+          <span class="stamp-badge stamp-badge--outline">PRE-FILLED FROM YOUR CLIPBOARD</span>
+        </div>
+        <h1>Send your job docket for a straightforward quote</h1>
         <p class="lead">
-          Tick the jobs you need help with, add a short note, and let us know where you are in Eaglescliffe or Yarm.
+          Jobs ticked on the front-page clipboard or trade list are automatically checked below. Add a short note and let us know where you are in Eaglescliffe or Yarm.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap quote-layout">
-        <!-- Main Interactive Quote Form (Dummy — zero network transmission) -->
-        <div class="form-card">
-          <form id="quote-form" novalidate>
-            <fieldset class="form-fieldset">
-              <legend class="form-legend">1. Which jobs are on your list? <span class="hint" style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; color: var(--ink-soft);">(tick any that apply)</span></legend>
-              <div class="chip-checks">
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Shelving & alcove shelves">
-                  <span>Shelving &amp; bookcases</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Curtain poles, tracks or blinds">
-                  <span>Curtain poles / blinds</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="TV wall bracket, heavy mirror or artwork">
-                  <span>TV mount / mirrors</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Ease sticking door or replace handles/hinges">
-                  <span>Doors, handles &amp; locks</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Cupboard doors, drawers or kitchen hinges">
-                  <span>Cupboard hinges / drawers</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Skirting, beading, stair gates or draught-proofing">
-                  <span>Skirting / stair gates</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Flat-pack furniture assembly">
-                  <span>Flat-pack assembly</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Wall-anchoring tall furniture & storage">
-                  <span>Wall-strapping / storage</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Doorbell, key safe or hallway hooks/coat rack">
-                  <span>Key safe / doorbell / hooks</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Bath, shower or kitchen silicone resealing">
-                  <span>Silicone resealing</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Wall filling, patching & touch-up">
-                  <span>Wall filling &amp; patching</span>
-                </label>
-                <label class="chip-check">
-                  <input type="checkbox" name="jobs" value="Garden gate, fence panel or shed repair">
-                  <span>Gate, fence or shed repair</span>
-                </label>
-              </div>
-            </fieldset>
+        <!-- Main Interactive Workshop Quote Docket (Dummy — zero network calls) -->
+        <div class="form-docket">
+          <div class="form-docket__header">
+            <span>WORKSHOP ENQUIRY DOCKET // TS16 &amp; TS15</span>
+            <span style="color: var(--brass-bright);">NO OBLIGATION ESTIMATE</span>
+          </div>
 
-            <fieldset class="form-fieldset">
-              <legend class="form-legend">2. About your property &amp; job</legend>
+          <div class="form-docket__body">
+            <form id="quote-form" novalidate>
+              <fieldset class="form-fieldset">
+                <legend class="form-legend">1. Ticked jobs on your docket <span class="hint" style="font-family: var(--font-sans); font-size: 0.84rem; font-weight: 500; color: var(--iron-soft);">(tick or untick any that apply)</span></legend>
+                <div class="chip-checks">
+                  <label class="chip-check" for="q-job-1">
+                    <input id="q-job-1" type="checkbox" name="jobs" value="Ease sticking internal door">
+                    <span>Ease sticking internal door</span>
+                  </label>
+                  <label class="chip-check" for="q-job-2">
+                    <input id="q-job-2" type="checkbox" name="jobs" value="Flat-pack wardrobe / chest assembly">
+                    <span>Flat-pack wardrobe / chest</span>
+                  </label>
+                  <label class="chip-check" for="q-job-3">
+                    <input id="q-job-3" type="checkbox" name="jobs" value="Fix dripping tap or re-silicone bath">
+                    <span>Dripping tap / bath silicone</span>
+                  </label>
+                  <label class="chip-check" for="q-job-4">
+                    <input id="q-job-4" type="checkbox" name="jobs" value="Hang heavy mirror, blinds or TV bracket">
+                    <span>Mirror, blinds or TV bracket</span>
+                  </label>
+                  <label class="chip-check" for="q-job-5">
+                    <input id="q-job-5" type="checkbox" name="jobs" value="Garden gate latch or fence panel repair">
+                    <span>Gate latch or fence panel</span>
+                  </label>
+                  <label class="chip-check" for="q-job-6">
+                    <input id="q-job-6" type="checkbox" name="jobs" value="Put up alcove shelving">
+                    <span>Put up alcove shelving</span>
+                  </label>
+                  <label class="chip-check" for="q-job-7">
+                    <input id="q-job-7" type="checkbox" name="jobs" value="Replace broken socket faceplate / light fitting [scope to confirm]">
+                    <span>Socket faceplate / light [scope]</span>
+                  </label>
+                  <label class="chip-check" for="q-job-8">
+                    <input id="q-job-8" type="checkbox" name="jobs" value="Draught-proofing & door furniture">
+                    <span>Draught-proofing &amp; handles</span>
+                  </label>
+                  <label class="chip-check" for="q-job-9">
+                    <input id="q-job-9" type="checkbox" name="jobs" value="Fit curtain poles or window tracks">
+                    <span>Curtain poles or tracks</span>
+                  </label>
+                  <label class="chip-check" for="q-job-10">
+                    <input id="q-job-10" type="checkbox" name="jobs" value="Cupboard hinges & kitchen drawer runners">
+                    <span>Cupboard hinges / drawers</span>
+                  </label>
+                  <label class="chip-check" for="q-job-11">
+                    <input id="q-job-11" type="checkbox" name="jobs" value="Wall-anchor tall furniture or fit key safe">
+                    <span>Wall-anchoring / key safe</span>
+                  </label>
+                  <label class="chip-check" for="q-job-12">
+                    <input id="q-job-12" type="checkbox" name="jobs" value="Wall filling, patching & making good">
+                    <span>Wall filling &amp; making good</span>
+                  </label>
+                </div>
+              </fieldset>
 
-              <div class="field-grid">
+              <fieldset class="form-fieldset">
+                <legend class="form-legend">2. Property location &amp; job notes</legend>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="q-area">Town or village <span class="req" aria-hidden="true">*</span></label>
+                    <select id="q-area" name="area" required aria-describedby="q-area-err">
+                      <option value="">Select your area&hellip;</option>
+                      <option value="eaglescliffe">Eaglescliffe (TS16)</option>
+                      <option value="yarm">Yarm (TS15)</option>
+                      <option value="egglescliffe-preston">Egglescliffe Village / Preston-on-Tees</option>
+                      <option value="kirklevington">Kirklevington (nearby TS15)</option>
+                      <option value="aislaby">Aislaby (nearby TS16)</option>
+                      <option value="nearby">Other nearby village (Ingleby Barwick / Hilton / Hutton Rudby)</option>
+                    </select>
+                    <p class="field-error" id="q-area-err" role="alert"></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="q-postcode">First part of postcode <span class="hint">(optional, e.g. TS16 0)</span></label>
+                    <input id="q-postcode" name="postcode" type="text" autocomplete="postal-code" placeholder="e.g. TS15 9">
+                  </div>
+                </div>
+
                 <div class="field">
-                  <label for="q-area">Area / Town <span class="req" aria-hidden="true">*</span></label>
-                  <select id="q-area" name="area" required aria-describedby="q-area-err">
-                    <option value="">Select your area…</option>
-                    <option value="eaglescliffe">Eaglescliffe (TS16)</option>
-                    <option value="yarm">Yarm (TS15)</option>
-                    <option value="egglescliffe-preston">Egglescliffe Village / Preston-on-Tees</option>
-                    <option value="nearby">Nearby village (Kirklevington / Ingleby Barwick / other)</option>
+                  <label for="q-details">Short description of the job(s) <span class="req" aria-hidden="true">*</span></label>
+                  <textarea
+                    id="q-details"
+                    name="details"
+                    rows="4"
+                    required
+                    aria-describedby="q-details-err"
+                    placeholder="Tell us roughly what needs doing, wall type if known (brick or plasterboard), and whether you already have the parts or flat-pack boxes on site…"
+                  ></textarea>
+                  <p class="field-error" id="q-details-err" role="alert"></p>
+                </div>
+
+                <div class="field">
+                  <label for="q-timing">Preferred visit window <span class="hint">(optional)</span></label>
+                  <select id="q-timing" name="timing">
+                    <option value="flexible">Flexible – next convenient slot</option>
+                    <option value="this-week">Ideally within the next 7 days</option>
+                    <option value="half-day">Half-day list – group all jobs into one visit</option>
+                    <option value="specific-days">Specific weekdays only (note above)</option>
                   </select>
-                  <p class="field-error" id="q-area-err" role="alert"></p>
                 </div>
+              </fieldset>
 
-                <div class="field">
-                  <label for="q-postcode">First part of postcode <span class="hint">(optional, e.g. TS16 0)</span></label>
-                  <input id="q-postcode" name="postcode" type="text" autocomplete="postal-code" placeholder="e.g. TS15 9">
+              <fieldset class="form-fieldset" style="margin-bottom: 1.15rem;">
+                <legend class="form-legend">3. Your contact details</legend>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="q-name">Your name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="q-name" name="name" type="text" autocomplete="name" required aria-describedby="q-name-err">
+                    <p class="field-error" id="q-name-err" role="alert"></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="q-contact">Phone or email <span class="req" aria-hidden="true">*</span></label>
+                    <input id="q-contact" name="contact" type="text" required aria-describedby="q-contact-err" placeholder="Best number or email for your quote">
+                    <p class="field-error" id="q-contact-err" role="alert"></p>
+                  </div>
                 </div>
-              </div>
+              </fieldset>
 
-              <div class="field">
-                <label for="q-details">Short description of the job(s) <span class="req" aria-hidden="true">*</span></label>
-                <textarea
-                  id="q-details"
-                  name="details"
-                  rows="4"
-                  required
-                  aria-describedby="q-details-err"
-                  placeholder="Tell us roughly what needs doing, wall type if known (brick or plasterboard), and whether you already have the parts/fittings…"
-                ></textarea>
-                <p class="field-error" id="q-details-err" role="alert"></p>
-              </div>
+              <button class="btn btn--primary" type="submit" style="width: 100%; font-size: 1.02rem; padding: 0.9rem 1.35rem;">
+                Stamp &amp; Send Quote Docket
+              </button>
+              <p style="font-size: 0.79rem; color: var(--iron-soft); margin: 0.65rem 0 0; text-align: center;">
+                Concept demo form: zero network requests—nothing is transmitted over the internet.
+              </p>
+            </form>
 
-              <div class="field">
-                <label for="q-timing">Preferred days or timeframe <span class="hint">(optional)</span></label>
-                <select id="q-timing" name="timing">
-                  <option value="flexible">Flexible – next convenient slot</option>
-                  <option value="this-week">Ideally within the next 7 days</option>
-                  <option value="specific-days">Specific weekdays only (note above)</option>
-                </select>
-              </div>
-            </fieldset>
-
-            <fieldset class="form-fieldset" style="margin-bottom: 1.1rem;">
-              <legend class="form-legend">3. Your contact details</legend>
-
-              <div class="field-grid">
-                <div class="field">
-                  <label for="q-name">Your name <span class="req" aria-hidden="true">*</span></label>
-                  <input id="q-name" name="name" type="text" autocomplete="name" required aria-describedby="q-name-err">
-                  <p class="field-error" id="q-name-err" role="alert"></p>
-                </div>
-
-                <div class="field">
-                  <label for="q-contact">Phone or email <span class="req" aria-hidden="true">*</span></label>
-                  <input id="q-contact" name="contact" type="text" required aria-describedby="q-contact-err" placeholder="Best number or email for your quote">
-                  <p class="field-error" id="q-contact-err" role="alert"></p>
-                </div>
-              </div>
-            </fieldset>
-
-            <button class="btn btn--primary" type="submit" style="width: 100%; font-size: 1.04rem; padding: 0.92rem 1.4rem;">
-              Send Quote Enquiry
-            </button>
-            <p style="font-size: 0.8rem; color: var(--ink-soft); margin: 0.65rem 0 0; text-align: center;">
-              Concept demo form: nothing is sent over the internet or stored externally.
-            </p>
-          </form>
-
-          <!-- Required Dummy Submit Feedback -->
-          <div class="demo-result" id="demo-result" tabindex="-1" role="status" aria-live="polite" hidden>
-            <p class="demo-result__title">Demo only – in the live site this would go straight to Eaglescliffe &amp; Yarm Handyman.</p>
-            <p id="demo-summary"></p>
-            <p style="font-size: 0.88rem; color: var(--ink-soft);">
-              On the live website, this enquiry can be delivered instantly to the owner's email inbox (with optional photo attachments or WhatsApp tap-to-message).
-            </p>
+            <!-- Required Dummy Submit Feedback -->
+            <div class="demo-result" id="demo-result" tabindex="-1" role="status" aria-live="polite" hidden>
+              <p class="demo-result__title">Demo only – in the live site this would go straight to Eaglescliffe &amp; Yarm Handyman.</p>
+              <p id="demo-summary"></p>
+              <p style="font-size: 0.86rem; color: var(--iron-soft);">
+                On the live website, this docket can arrive directly in the owner's email inbox (with optional photo attachments or WhatsApp tap-to-message).
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Direct Contact & Helpful Photo Tip Sidebar -->
-        <aside style="display: flex; flex-direction: column; gap: 1.2rem;">
-          <div class="card" id="contact-details">
-            <span class="card__num">DIRECT CONTACT</span>
-            <h2 style="font-size: 1.35rem;">Prefer to call or message?</h2>
+        <!-- Direct Contact & Helpful Workshop Notes Sidebar -->
+        <aside style="display: flex; flex-direction: column; gap: 1.15rem;">
+          <div class="docket-card" id="contact-details">
+            <span class="docket-card__num">DIRECT WORKSHOP CONTACT</span>
+            <h2 style="font-size: 1.3rem;">Prefer to phone or message?</h2>
             <p>
               Direct phone / WhatsApp:<br>
               <span class="ph">[Phone – owner to confirm]</span>
@@ -232,10 +282,10 @@
           </div>
 
           <div class="notice-box">
-            <h3>What helps give an accurate quote?</h3>
-            <ul style="margin: 0.4rem 0 0; padding-left: 1.15rem; color: var(--ink-soft);">
-              <li>Whether you already have the shelf, blind, bracket or flat-pack box on site</li>
-              <li>Rough measurements or model name (for large flat-pack wardrobes)</li>
+            <h3>What helps price a list accurately?</h3>
+            <ul class="plain-specs" style="margin: 0.45rem 0 0; padding-left: 1.15rem; color: var(--iron-soft); font-size: 0.9rem;">
+              <li>Whether shelves, brackets or flat-pack boxes are already on site</li>
+              <li>Rough dimensions or product name for large wardrobes</li>
               <li>Parking notes if you're right on Yarm High Street or a permit lane</li>
             </ul>
           </div>
@@ -249,8 +299,8 @@
       <div class="footer-grid">
         <div>
           <h3>Eaglescliffe &amp; Yarm Handyman</h3>
-          <p style="margin-top: 0; color: #C2CDD5;">
-            Local home repairs, fittings, assembly and odd jobs in Eaglescliffe (TS16) &amp; Yarm (TS15).
+          <p style="margin-top: 0; color: #C6D1DA;">
+            Local home repairs, fittings, flat-pack assembly and odd-job lists in Eaglescliffe (TS16) &amp; Yarm (TS15).
           </p>
           <p style="margin-bottom: 0;">
             Phone: <span class="ph ph--on-dark">[Phone – owner to confirm]</span><br>
@@ -259,24 +309,24 @@
         </div>
 
         <div>
-          <h3>Pages</h3>
+          <h3>Workshop Docket</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services &amp; Odd-Job List</a></li>
-            <li><a href="areas.html">Areas Covered (TS16 &amp; TS15)</a></li>
-            <li><a href="quote.html">Request a Quote</a></li>
+            <li><a href="index.html">01 / Job Pad (Home)</a></li>
+            <li><a href="services.html">02 / Trade List &amp; Checklist</a></li>
+            <li><a href="areas.html">03 / TS16 &amp; TS15 Patch</a></li>
+            <li><a href="quote.html">04 / Send Quote Docket</a></li>
           </ul>
         </div>
 
         <div>
-          <h3>Area Map</h3>
+          <h3>Local Patch Map</h3>
           <ul>
             <li>
               <a href="https://www.google.com/maps/search/?api=1&amp;query=Eaglescliffe+and+Yarm+TS16+TS15" target="_blank" rel="noopener noreferrer">
                 View Eaglescliffe &amp; Yarm on Google Maps &nearr;
               </a>
             </li>
-            <li style="color: #AEB9C2; font-size: 0.88rem;">
+            <li style="color: #B4C0CA; font-size: 0.86rem;">
               Hours: <span class="ph ph--on-dark">[Working hours – owner to confirm]</span>
             </li>
           </ul>
@@ -294,7 +344,7 @@
   <div class="mobile-dock" role="region" aria-label="Quick actions">
     <a class="btn btn--call" href="#contact-details">Call: [To confirm]</a>
     <a class="btn btn--primary" href="#quote-form">
-      <span>Fill Quote Form</span>
+      <span>Fill Docket</span>
       <span class="job-badge" data-job-count hidden>0</span>
     </a>
   </div>
