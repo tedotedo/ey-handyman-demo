@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Eaglescliffe and Yarm Handyman emblem">
+  <rect width="64" height="64" rx="14" fill="#1B242B"/>
+  <path d="M12 30 L32 13 L52 30" fill="none" stroke="#D99B43" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18 29 V49 H46 V29" fill="none" stroke="#F6F3EC" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <rect x="26" y="35" width="12" height="14" rx="2" fill="#B84A27"/>
+  <circle cx="35" cy="42" r="1.5" fill="#F6F3EC"/>
+</svg>
