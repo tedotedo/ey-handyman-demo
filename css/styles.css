@@ -1102,6 +1102,14 @@ h3 {
   margin: 0;
 }
 
+@media (max-width: 480px) {
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.045em;
+    padding: 0.24rem 0.56rem;
+  }
+}
+
 /* ==========================================================================
    Sticky Mobile Action Dock (390px Counter-Pitch Closer)
    ========================================================================== */
@@ -1119,8 +1127,9 @@ h3 {
     right: 0;
     bottom: 0;
     z-index: 95;
-    background: rgba(20, 28, 34, 0.97);
-    border-top: 1px solid rgba(242, 198, 120, 0.3);
+    background: #141C22;
+    border-top: 1px solid rgba(242, 198, 120, 0.35);
+    box-shadow: 0 -8px 24px rgba(20, 28, 34, 0.22);
     padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
   }
 
@@ -1130,8 +1139,9 @@ h3 {
   }
 
   .mobile-dock .btn--call {
-    background: rgba(255, 255, 255, 0.1);
+    background: #232F38;
     color: #F6F3EC;
     border-color: rgba(242, 198, 120, 0.45);
   }
 }
+
