@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Eaglescliffe &amp; Yarm Handyman — Sunlit Home-Fix App &amp; 3-Step Docket (Concept C)</title>
+  <meta name="description" content="Concept C single-page home-fix app for Eaglescliffe &amp; Yarm Handyman: sunlit editorial utility, 2x2 Bento summary, tappable odd-job rows, and 3-step inline docket stepper.">
+  <meta name="theme-color" content="#FAFAF7">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/jetbrains-mono-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Persistent Top Concept Banner -->
+  <div class="concept-banner" role="region" aria-label="Concept website notice">
+    <div class="wrap concept-banner__inner">
+      <p class="concept-banner__text">
+        <span class="concept-banner__dot" aria-hidden="true"></span>
+        <span>Concept design by Mark Aszkenasy – not the official website of Eaglescliffe &amp; Yarm Handyman.</span>
+      </p>
+      <div class="concept-banner__controls">
+        <nav class="concept-switcher" aria-label="Concept version switcher">
+          <span class="concept-switcher__label">Concept:</span>
+          <a class="concept-switcher__pill" href="../index.html">A</a>
+          <a class="concept-switcher__pill" href="../b/index.html">B</a>
+          <a class="concept-switcher__pill is-active" href="index.html" aria-current="page">C</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Sunlit App Header + Horizontal Pill-Tab Nav -->
+  <header class="sunlit-header">
+    <div class="wrap sunlit-header__top">
+      <a class="app-brand" href="#overview">
+        <img class="app-brand__logo" src="../images/logo-mark.svg" width="34" height="34" alt="">
+        <span class="app-brand__copy">
+          <span class="app-brand__name">Eaglescliffe &amp; Yarm Handyman</span>
+          <span class="app-brand__meta">TS16 &amp; TS15 HOME-FIX DOCKET</span>
+        </span>
+      </a>
+
+      <a class="header-list-pill" href="#docket">
+        <span>Your list:</span>
+        <strong data-list-count>0</strong>
+      </a>
+    </div>
+
+    <nav class="pill-tab-bar" aria-label="Single-page navigation">
+      <div class="wrap pill-tab-bar__inner">
+        <a class="pill-tab is-active" href="#overview" data-nav-pill="overview">Overview</a>
+        <a class="pill-tab" href="#jobs" data-nav-pill="jobs">Jobs</a>
+        <a class="pill-tab" href="#areas" data-nav-pill="areas">Areas</a>
+        <a class="pill-tab" href="#docket" data-nav-pill="docket">
+          <span>Docket</span>
+          <span class="pill-tab__count" data-list-count>0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- OVERVIEW: Sunlit Intro + 2x2 Mobile Bento Summary Grid -->
+    <section class="section section--hero" id="overview" aria-labelledby="overview-heading">
+      <div class="wrap">
+        <div class="overview-split">
+          <div class="overview-copy">
+            <span class="kicker-pill">CALM LOCAL HOME MAINTENANCE &middot; TS16 &amp; TS15</span>
+            <h1 id="overview-heading">Turn your fridge odd-job list into one tidy home visit.</h1>
+            <p class="lead">
+              From easing a sticking internal door and hanging alcove shelving to assembling flat-pack wardrobes or resealing a bath, add your small repairs below and send one clear docket across <strong>Eaglescliffe</strong> and <strong>Yarm</strong>.
+            </p>
+
+            <div class="hero-cta-row">
+              <a class="btn btn--green" href="#jobs">Browse &amp; Add Jobs &darr;</a>
+              <a class="btn btn--soft" href="#docket">Start 3-Step Docket</a>
+            </div>
+          </div>
+
+          <figure class="sunlit-photo">
+            <div class="sunlit-photo__frame">
+              <img
+                src="../images/hero-home-repairs.jpg"
+                width="1440"
+                height="803"
+                alt="Hands fitting a brass hinge onto a solid oak panelled door in a tidy hallway with a canvas tool bag and spirit level on a dust sheet"
+                fetchpriority="high"
+              >
+              <span class="illus-tag">Illustrative image</span>
+            </div>
+            <figcaption class="sunlit-photo__caption">
+              <span>Careful indoor woodwork, spirit-level shelving &amp; clean dust-sheet preparation.</span>
+              <span>AI concept photo</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Crisp 2x2 Mobile Bento Summary Grid -->
+        <div class="bento-grid" aria-label="Service summary highlights">
+          <article class="bento-tile">
+            <span class="bento-tile__eyebrow">CORE PATCH</span>
+            <h2 class="bento-tile__title">TS16 &amp; TS15</h2>
+            <p class="bento-tile__desc">Dedicated to Eaglescliffe, Yarm &amp; immediate riverside villages.</p>
+          </article>
+
+          <article class="bento-tile bento-tile--accent">
+            <span class="bento-tile__eyebrow">HOW IT WORKS</span>
+            <h2 class="bento-tile__title">1 Visit / 5 Small Jobs</h2>
+            <p class="bento-tile__desc">Group nagging repairs onto a single morning or half-day booking.</p>
+          </article>
+
+          <article class="bento-tile">
+            <span class="bento-tile__eyebrow">ARRIVAL SLOTS</span>
+            <h2 class="bento-tile__title">Local Coverage</h2>
+            <p class="bento-tile__desc">Both banks of Yarm Bridge without cross-county travel delays.</p>
+          </article>
+
+          <article class="bento-tile" id="contact-tile">
+            <span class="bento-tile__eyebrow">DIRECT HANDYMAN</span>
+            <h2 class="bento-tile__title"><span class="ph">[Phone to confirm]</span></h2>
+            <p class="bento-tile__desc">Hours: <span class="ph">[Working hours – owner to confirm]</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOBS: Clean Tappable Job-List Rows (+ Add to list) -->
+    <section class="section section--tinted" id="jobs" aria-labelledby="jobs-heading">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">HOUSEHOLD TRADE MENU</span>
+            <h2 id="jobs-heading">Tap jobs to build your visit list</h2>
+            <p class="section-desc">
+              Every item added here automatically checks itself in Step 1 of the Quote Stepper below. <span class="ph">[Exact service list – owner to confirm]</span>
+            </p>
+          </div>
+          <a class="btn btn--green btn--compact" href="#docket">
+            <span>Review in Stepper</span>
+            <span class="inline-count" data-list-count>0</span>
+          </a>
+        </div>
+
+        <!-- Category Filter Chips -->
+        <div class="cat-filters" role="group" aria-label="Filter repair rows by category">
+          <button type="button" class="cat-chip is-active" data-cat-filter="all" aria-pressed="true">All (12)</button>
+          <button type="button" class="cat-chip" data-cat-filter="walls" aria-pressed="false">Walls &amp; Shelving</button>
+          <button type="button" class="cat-chip" data-cat-filter="doors" aria-pressed="false">Doors &amp; Woodwork</button>
+          <button type="button" class="cat-chip" data-cat-filter="assembly" aria-pressed="false">Flat-Pack</button>
+          <button type="button" class="cat-chip" data-cat-filter="wet-garden" aria-pressed="false">Wet Rooms &amp; Garden</button>
+        </div>
+
+        <div class="jobs-layout">
+          <div class="job-rows-card" id="job-rows-list">
+            <!-- Row 1 -->
+            <div class="job-row" data-job-cat="doors">
+              <div class="job-row__info">
+                <h3>Ease a sticking internal door</h3>
+                <p>Plane catching edges after new carpets, adjust keeps &amp; check hinges</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Ease sticking internal door" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="job-row" data-job-cat="walls">
+              <div class="job-row__info">
+                <h3>Put up alcove shelving</h3>
+                <p>Floating or bracketed shelves spirit-levelled into brick or stud walls</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Put up alcove shelving" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="job-row" data-job-cat="assembly">
+              <div class="job-row__info">
+                <h3>Flat-pack wardrobe / chest assembly</h3>
+                <p>Sturdy, square assembly of wardrobes, beds, desks &amp; drawer chests</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Flat-pack wardrobe / chest assembly" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="job-row" data-job-cat="wet-garden">
+              <div class="job-row__info">
+                <h3>Fix dripping tap or re-silicone bath</h3>
+                <p>Strip old mouldy sealant &amp; apply neat sanitary silicone around bath/shower</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Fix dripping tap or re-silicone bath" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="job-row" data-job-cat="walls">
+              <div class="job-row__info">
+                <h3>Hang heavy mirror, blinds or TV bracket</h3>
+                <p>Appropriate wall anchors for solid masonry, dot-and-dab or plasterboard</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Hang heavy mirror, blinds or TV bracket" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 6 -->
+            <div class="job-row" data-job-cat="walls">
+              <div class="job-row__info">
+                <h3>Fit curtain poles or window tracks</h3>
+                <p>Straight, secure curtain rails, blinds &amp; bay-window batten fixings</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Fit curtain poles or window tracks" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 7 -->
+            <div class="job-row" data-job-cat="doors">
+              <div class="job-row__info">
+                <h3>Draught-proofing &amp; door furniture</h3>
+                <p>Replacement handles, tubular latches, hinges, letterboxes &amp; brush seals</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Draught-proofing & door furniture" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 8 -->
+            <div class="job-row" data-job-cat="doors">
+              <div class="job-row__info">
+                <h3>Cupboard hinges &amp; kitchen drawer runners</h3>
+                <p>Re-align dropping kitchen cabinet doors &amp; swap worn soft-close runners</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Cupboard hinges & kitchen drawer runners" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 9 -->
+            <div class="job-row" data-job-cat="assembly">
+              <div class="job-row__info">
+                <h3>Wall-anchor tall furniture or fit key safe</h3>
+                <p>Child-safe anti-tip straps on bookcases, outdoor key safes &amp; coat racks</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Wall-anchor tall furniture or fit key safe" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 10 -->
+            <div class="job-row" data-job-cat="wet-garden">
+              <div class="job-row__info">
+                <h3>Garden gate latch or fence panel repair</h3>
+                <p>Outdoor gate bolts, hinges, shed doors &amp; storm-rattled fence panels</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Garden gate latch or fence panel repair" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 11 -->
+            <div class="job-row" data-job-cat="wet-garden">
+              <div class="job-row__info">
+                <h3>Wall filling, patching &amp; making good</h3>
+                <p>Fill old rawlplug holes, picture-hook marks &amp; minor hairline cracks</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Wall filling, patching & making good" aria-pressed="false">+ Add to list</button>
+            </div>
+
+            <!-- Row 12 -->
+            <div class="job-row" data-job-cat="assembly">
+              <div class="job-row__info">
+                <h3>Socket faceplate / light swap <span class="ph">[scope to confirm]</span></h3>
+                <p>Like-for-like minor fittings subject to owner scope confirmation</p>
+              </div>
+              <button type="button" class="add-row-btn" data-add-job="Replace broken socket faceplate / light fitting [scope to confirm]" aria-pressed="false">+ Add to list</button>
+            </div>
+          </div>
+
+          <aside class="jobs-side">
+            <figure class="side-photo-card">
+              <div class="side-photo-card__img">
+                <img
+                  src="../images/services-shelving-alcove.jpg"
+                  width="1200"
+                  height="896"
+                  alt="Solid oak floating shelves fitted into a living room chimney alcove with a spirit level and fixings on a dust sheet below"
+                  loading="lazy"
+                >
+                <span class="illus-tag">Illustrative image</span>
+              </div>
+              <figcaption>
+                <strong>Tidy indoor craft:</strong> Alcove shelving &amp; wall anchors checked level with floors protected.
+              </figcaption>
+            </figure>
+
+            <div class="info-card">
+              <h3>Rates &amp; safety scope</h3>
+              <p>
+                Guide rates: <span class="ph">[Call-out / hourly / half-day rate – owner to confirm]</span><br>
+                Materials: <span class="ph">[Materials policy – owner to confirm]</span><br>
+                Insurance: <span class="ph">[Public liability insurance cover – owner to confirm]</span>
+              </p>
+              <p class="info-card__note">
+                Work requiring <strong>Gas Safe</strong> registration or <strong>Part P electrical certification</strong> is excluded and always referred to certified specialists. <span class="ph">[Owner's exact trade qualifications &amp; exclusions – owner to confirm]</span>
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREAS: TS16 & TS15 Coverage -->
+    <section class="section" id="areas" aria-labelledby="areas-heading">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">SERVICE PATCH</span>
+            <h2 id="areas-heading">Eaglescliffe, Yarm &amp; nearby villages</h2>
+            <p class="section-desc">
+              Mobile workshop coming directly to your door on both sides of the Tees.
+            </p>
+          </div>
+          <a
+            class="btn btn--soft btn--compact"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Eaglescliffe+and+Yarm+TS16+TS15"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Patch in Google Maps &nearr;
+          </a>
+        </div>
+
+        <div class="areas-grid">
+          <article class="area-card">
+            <span class="area-card__badge">TS16 &middot; NORTH OF YARM BRIDGE</span>
+            <h3>Eaglescliffe &amp; Egglescliffe</h3>
+            <p>
+              Eaglescliffe, historic Egglescliffe Village, Preston-on-Tees, Orchard Estate, Yarm Road, Swinburne Road and Urlay Nook.
+            </p>
+            <p class="area-card__ph"><span class="ph">[Exact TS16 sub-areas – owner to confirm]</span></p>
+            <button type="button" class="btn btn--soft btn--compact" data-jump-area="eaglescliffe">Select TS16 in Stepper &rarr;</button>
+          </article>
+
+          <article class="area-card">
+            <span class="area-card__badge">TS15 &middot; SOUTH OF YARM BRIDGE</span>
+            <h3>Yarm &amp; Surrounding Estates</h3>
+            <p>
+              Yarm High Street cottages &amp; cobble wynds, Layfield, Spitalfields, Green Lane, Conyers, Levendale, Mount Leven and Kirklevington.
+            </p>
+            <p class="area-card__ph"><span class="ph">[Exact TS15 sub-areas – owner to confirm]</span></p>
+            <button type="button" class="btn btn--soft btn--compact" data-jump-area="yarm">Select TS15 in Stepper &rarr;</button>
+          </article>
+
+          <figure class="area-photo-card">
+            <div class="area-photo-card__img">
+              <img
+                src="../images/areas-brick-houses.jpg"
+                width="1440"
+                height="803"
+                alt="Warm red-brick period townhouses with pantile roofs beside a tree-lined riverside walk in evening sunlight"
+                loading="lazy"
+              >
+              <span class="illus-tag">Illustrative image</span>
+            </div>
+            <figcaption>
+              <span>Outlying villages (Aislaby, Ingleby Barwick, Hilton, Hutton Rudby): <span class="ph">[Surrounding villages &amp; travel radius – owner to confirm]</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCKET: Mobbin-Style 3-Step Progressive Inline Stepper -->
+    <section class="section section--tinted" id="docket" aria-labelledby="stepper-heading">
+      <div class="wrap stepper-wrap">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">3-STEP QUOTE DOCKET</span>
+            <h2 id="stepper-heading">Request an upfront quote</h2>
+            <p class="section-desc">
+              Complete three quick steps — no account signup, no obligation, and clear pricing before any tools come out.
+            </p>
+          </div>
+        </div>
+
+        <div class="stepper-card">
+          <!-- Step Progress Header -->
+          <div class="stepper-head">
+            <div class="stepper-tabs" role="list" aria-label="Quote docket steps">
+              <button type="button" class="step-node is-current" data-step-target="1" role="listitem">
+                <span class="step-node__num">1</span>
+                <span class="step-node__label">Select Jobs</span>
+              </button>
+              <button type="button" class="step-node" data-step-target="2" role="listitem">
+                <span class="step-node__num">2</span>
+                <span class="step-node__label">Area &amp; Timing</span>
+              </button>
+              <button type="button" class="step-node" data-step-target="3" role="listitem">
+                <span class="step-node__num">3</span>
+                <span class="step-node__label">Your Details</span>
+              </button>
+            </div>
+
+            <div class="stepper-progress" aria-hidden="true">
+              <div class="stepper-progress__fill" id="stepper-progress-bar" style="width: 33.33%;"></div>
+            </div>
+            <p class="stepper-status-line" id="stepper-status-line" aria-live="polite">Step 1 of 3 — Select the odd jobs on your list</p>
+          </div>
+
+          <form id="c-stepper-form" novalidate>
+            <!-- STEP 1: Select Jobs -->
+            <div class="step-pane" id="step-pane-1" data-step-pane="1">
+              <fieldset class="clean-fieldset">
+                <legend class="pane-title">1. Which small jobs are on your list?</legend>
+                <p class="pane-hint">Tick one or several jobs below (synced with the trade list above), or type a custom job.</p>
+
+                <div class="step-checks" id="step-1-checks">
+                  <label class="step-check" for="c-j1">
+                    <input id="c-j1" type="checkbox" data-step-job value="Ease sticking internal door">
+                    <span>Ease sticking internal door</span>
+                  </label>
+                  <label class="step-check" for="c-j2">
+                    <input id="c-j2" type="checkbox" data-step-job value="Put up alcove shelving">
+                    <span>Put up alcove shelving</span>
+                  </label>
+                  <label class="step-check" for="c-j3">
+                    <input id="c-j3" type="checkbox" data-step-job value="Flat-pack wardrobe / chest assembly">
+                    <span>Flat-pack wardrobe / chest assembly</span>
+                  </label>
+                  <label class="step-check" for="c-j4">
+                    <input id="c-j4" type="checkbox" data-step-job value="Fix dripping tap or re-silicone bath">
+                    <span>Fix dripping tap or re-silicone bath</span>
+                  </label>
+                  <label class="step-check" for="c-j5">
+                    <input id="c-j5" type="checkbox" data-step-job value="Hang heavy mirror, blinds or TV bracket">
+                    <span>Hang heavy mirror, blinds or TV bracket</span>
+                  </label>
+                  <label class="step-check" for="c-j6">
+                    <input id="c-j6" type="checkbox" data-step-job value="Fit curtain poles or window tracks">
+                    <span>Fit curtain poles or window tracks</span>
+                  </label>
+                  <label class="step-check" for="c-j7">
+                    <input id="c-j7" type="checkbox" data-step-job value="Draught-proofing & door furniture">
+                    <span>Draught-proofing &amp; door furniture</span>
+                  </label>
+                  <label class="step-check" for="c-j8">
+                    <input id="c-j8" type="checkbox" data-step-job value="Cupboard hinges & kitchen drawer runners">
+                    <span>Cupboard hinges &amp; kitchen drawer runners</span>
+                  </label>
+                  <label class="step-check" for="c-j9">
+                    <input id="c-j9" type="checkbox" data-step-job value="Wall-anchor tall furniture or fit key safe">
+                    <span>Wall-anchor tall furniture or fit key safe</span>
+                  </label>
+                  <label class="step-check" for="c-j10">
+                    <input id="c-j10" type="checkbox" data-step-job value="Garden gate latch or fence panel repair">
+                    <span>Garden gate latch or fence panel repair</span>
+                  </label>
+                  <label class="step-check" for="c-j11">
+                    <input id="c-j11" type="checkbox" data-step-job value="Wall filling, patching & making good">
+                    <span>Wall filling, patching &amp; making good</span>
+                  </label>
+                  <label class="step-check" for="c-j12">
+                    <input id="c-j12" type="checkbox" data-step-job value="Replace broken socket faceplate / light fitting [scope to confirm]">
+                    <span>Socket faceplate / light [scope to confirm]</span>
+                  </label>
+                </div>
+
+                <div class="field-box" style="margin-top: 1rem;">
+                  <label for="c-other-job">Any other odd job not listed above? <span class="opt">(optional)</span></label>
+                  <input id="c-other-job" name="other_job" type="text" placeholder="e.g. Fit stairgate, tighten loose banister rail, hang picture gallery…">
+                </div>
+
+                <p class="field-error" id="step-1-err" role="alert"></p>
+              </fieldset>
+
+              <div class="stepper-nav stepper-nav--end">
+                <button type="button" class="btn btn--green" id="to-step-2-btn">
+                  Next: Area &amp; Timing &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Postcode Area & Timing (with 1-tap date chips) -->
+            <div class="step-pane" id="step-pane-2" data-step-pane="2" hidden>
+              <fieldset class="clean-fieldset">
+                <legend class="pane-title">2. Postcode area &amp; preferred timing</legend>
+                <p class="pane-hint">Let us know where you are around TS16 or TS15 and tap a convenient visit window.</p>
+
+                <div class="field-grid-2">
+                  <div class="field-box">
+                    <label for="c-area">Town or village <span class="req" aria-hidden="true">*</span></label>
+                    <select id="c-area" name="area" required aria-describedby="c-area-err">
+                      <option value="">Choose your area&hellip;</option>
+                      <option value="Eaglescliffe (TS16)">Eaglescliffe (TS16)</option>
+                      <option value="Yarm (TS15)">Yarm (TS15)</option>
+                      <option value="Egglescliffe Village / Preston">Egglescliffe Village / Preston-on-Tees</option>
+                      <option value="Kirklevington (TS15)">Kirklevington (TS15)</option>
+                      <option value="Aislaby (TS16)">Aislaby (TS16)</option>
+                      <option value="Nearby village [radius to confirm]">Other nearby village [radius to confirm]</option>
+                    </select>
+                    <p class="field-error" id="c-area-err" role="alert"></p>
+                  </div>
+
+                  <div class="field-box">
+                    <label for="c-postcode">First part of postcode <span class="opt">(optional)</span></label>
+                    <input id="c-postcode" name="postcode" type="text" autocomplete="postal-code" placeholder="e.g. TS16 0 or TS15 9">
+                  </div>
+                </div>
+
+                <!-- 1-Tap Timing / Date Chips -->
+                <div class="field-box" style="margin-top: 1rem;">
+                  <label for="c-timing-input">Preferred visit window (tap a chip)</label>
+                  <div class="date-chips" role="group" aria-label="1-tap visit timing options">
+                    <button type="button" class="date-chip is-selected" data-timing-chip="Flexible — next available slot" aria-pressed="true">Flexible slot</button>
+                    <button type="button" class="date-chip" data-timing-chip="This week if free" aria-pressed="false">This week</button>
+                    <button type="button" class="date-chip" data-timing-chip="Next week" aria-pressed="false">Next week</button>
+                    <button type="button" class="date-chip" data-timing-chip="Half-day list bundle" aria-pressed="false">Half-day bundle</button>
+                    <button type="button" class="date-chip" data-timing-chip="Weekday morning" aria-pressed="false">Weekday AM</button>
+                  </div>
+                  <input id="c-timing-input" name="timing" type="text" value="Flexible — next available slot" readonly class="readonly-pill-input">
+                </div>
+
+                <div class="field-box" style="margin-top: 1rem;">
+                  <label for="c-notes">Helpful job notes <span class="req" aria-hidden="true">*</span></label>
+                  <textarea
+                    id="c-notes"
+                    name="notes"
+                    rows="3"
+                    required
+                    aria-describedby="c-notes-err"
+                    placeholder="Briefly note wall types (brick or stud), whether parts/boxes are already at home, or High Street parking info…"
+                  ></textarea>
+                  <p class="field-error" id="c-notes-err" role="alert"></p>
+                </div>
+              </fieldset>
+
+              <div class="stepper-nav">
+                <button type="button" class="btn btn--soft" id="back-to-step-1-btn">&larr; Back</button>
+                <button type="button" class="btn btn--green" id="to-step-3-btn">Next: Your Details &rarr;</button>
+              </div>
+            </div>
+
+            <!-- STEP 3: Your Details & Submit -->
+            <div class="step-pane" id="step-pane-3" data-step-pane="3" hidden>
+              <fieldset class="clean-fieldset">
+                <legend class="pane-title">3. Your contact details &amp; review</legend>
+                <p class="pane-hint">Check your summary below and leave the best number or email for your upfront quote.</p>
+
+                <div class="review-summary" id="c-review-box" aria-live="polite">
+                  <div class="review-summary__row">
+                    <span>Selected jobs:</span>
+                    <strong id="rev-jobs">None selected</strong>
+                  </div>
+                  <div class="review-summary__row">
+                    <span>Location &amp; timing:</span>
+                    <strong id="rev-area-timing">To confirm</strong>
+                  </div>
+                </div>
+
+                <div class="field-grid-2" style="margin-top: 1rem;">
+                  <div class="field-box">
+                    <label for="c-name">Your name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err" placeholder="e.g. David Miller">
+                    <p class="field-error" id="c-name-err" role="alert"></p>
+                  </div>
+
+                  <div class="field-box">
+                    <label for="c-contact">Phone or email <span class="req" aria-hidden="true">*</span></label>
+                    <input id="c-contact" name="contact" type="text" required aria-describedby="c-contact-err" placeholder="Mobile number or email address">
+                    <p class="field-error" id="c-contact-err" role="alert"></p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="stepper-nav">
+                <button type="button" class="btn btn--soft" id="back-to-step-2-btn">&larr; Back</button>
+                <button type="submit" class="btn btn--green">Send Quote Docket</button>
+              </div>
+
+              <p class="demo-note-line">
+                Concept demo form: client-side only with zero cookies, trackers or network requests.
+              </p>
+            </div>
+          </form>
+
+          <!-- Valid Submit Feedback -->
+          <div class="submit-success" id="c-submit-success" tabindex="-1" role="status" aria-live="polite" hidden>
+            <p class="submit-success__exact">Demo only – in the live site this would go straight to Eaglescliffe &amp; Yarm Handyman.</p>
+            <p class="submit-success__detail" id="c-submit-detail"></p>
+            <button type="button" class="btn btn--soft btn--compact" id="c-edit-again-btn">Edit docket or test again</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Sunlit Footer -->
+  <footer class="sunlit-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Eaglescliffe &amp; Yarm Handyman</h2>
+          <p>
+            Practical indoor repairs, shelving, flat-pack assembly and odd-job lists across Eaglescliffe (TS16) &amp; Yarm (TS15).
+          </p>
+          <p>
+            Phone: <span class="ph">[Phone to confirm]</span> &middot;
+            Email: <span class="ph">[Email – owner to confirm]</span><br>
+            Working hours: <span class="ph">[Working hours – owner to confirm]</span>
+          </p>
+        </div>
+
+        <div>
+          <h3>Concept Versions &amp; Map</h3>
+          <ul class="footer-list">
+            <li><a href="../index.html">Concept A — Blueprint &amp; Tear-Off Job Pad</a></li>
+            <li><a href="../b/index.html">Concept B — Obsidian Workshop &amp; Snap Drawer</a></li>
+            <li><a href="index.html" aria-current="page">Concept C — Sunlit Home-Fix App &amp; Stepper</a></li>
+            <li>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Eaglescliffe+and+Yarm+TS16+TS15" target="_blank" rel="noopener noreferrer">
+                Directions / Service Area on Google Maps &nearr;
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p><strong>Concept disclaimer:</strong> Concept design by Mark Aszkenasy – not the official website of Eaglescliffe &amp; Yarm Handyman. Built as a speculative pitch demo; no forms transmit data and no cookies are set.</p>
+        <p><strong>Illustrative image credit:</strong> All photographs (<code>hero-home-repairs.jpg</code>, <code>services-shelving-alcove.jpg</code>, <code>areas-brick-houses.jpg</code>) are AI-generated illustrative images created specifically for this concept demo ("Illustrative image"); none depict Eaglescliffe &amp; Yarm Handyman, its personnel, or client homes.</p>
+        <p><strong>Design by Mark Aszkenasy</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bottom-bar" role="region" aria-label="Quick actions">
+    <a class="btn btn--soft mobile-bottom-bar__btn" href="#contact-tile">Call: [To confirm]</a>
+    <a class="btn btn--green mobile-bottom-bar__btn" href="#docket">
+      <span>3-Step Docket</span>
+      <span class="inline-count" data-list-count>0</span>
+    </a>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
