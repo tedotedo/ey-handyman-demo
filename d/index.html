@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#141414">
+  <title>Eaglescliffe &amp; Yarm Handyman | Concept D — Send a Photo, Get a Price</title>
+  <meta name="description" content="Concept D for Eaglescliffe &amp; Yarm Handyman: snap a photo of the job, send it and get a price back. Covering TS16 and TS15.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Persistent Top Concept Banner + [A] [B] [C] [D] Switcher -->
+  <div class="concept-banner" role="region" aria-label="Concept website notice">
+    <div class="concept-banner__inner">
+      <p>Concept design by Mark Aszkenasy – not the official website of Eaglescliffe &amp; Yarm Handyman.</p>
+      <nav class="concept-switcher" aria-label="Switch concept version">
+        <span class="concept-switcher__label">Concept:</span>
+        <a class="concept-switcher__pill" href="../index.html"><span>A</span></a>
+        <a class="concept-switcher__pill" href="../b/index.html"><span>B</span></a>
+        <a class="concept-switcher__pill" href="../c/index.html"><span>C</span></a>
+        <a class="concept-switcher__pill is-active" href="index.html" aria-current="page"><span>D</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="wrap site-head__inner">
+      <a class="brand" href="#top">
+        <img src="../images/logo-mark.svg" width="36" height="36" alt="">
+        <span>
+          <span class="brand__name">E&amp;Y Handyman</span>
+          <span class="brand__meta">Eaglescliffe TS16 · Yarm TS15</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Sections"><a href="#how">How it works</a><a href="#slots">Next free slot</a><a href="#work">Before &amp; after</a><a href="#areas">Areas</a></nav>
+      <a class="btn btn--hi site-head__cta" href="#snap">Send a photo</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- 1. Hero: the whole site is one action -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="plate">Eaglescliffe &amp; Yarm · TS16 &amp; TS15</p>
+          <h1 class="hero__title" id="hero-title">Send a photo.<br><span>Get a price.</span></h1>
+          <p class="hero__lead">Sticking door, wobbly shelf, tired sealant. Take a picture, tell us where you are, and you get a straight answer back.</p>
+          <ul class="hero__ticks">
+            <li>Small jobs welcome</li>
+            <li>No call-out to quote</li>
+            <li><span class="ph">[Public liability insurance cover – owner to confirm]</span></li>
+          </ul>
+        </div>
+
+        <form class="ticket form" id="snap" data-job-form novalidate aria-labelledby="ticket-title">
+          <div class="ticket__head">
+            <h2 id="ticket-title">Job ticket</h2>
+            <span class="ticket__no">No. <b data-ticket-no>D-0001</b></span>
+          </div>
+
+          <div class="form__row">
+            <label class="drop" for="job-photos">
+              <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><rect x="4" y="12" width="40" height="28" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="26" r="8" fill="none" stroke="currentColor" stroke-width="3"/><rect x="16" y="6" width="16" height="8" rx="2" fill="currentColor"/></svg>
+              <span class="drop__big">Tap to add photos</span>
+              <span class="drop__small">Up to four. A wide shot and a close-up work best.</span>
+            </label>
+            <input class="visually-hidden" id="job-photos" type="file" accept="image/*" multiple>
+            <ul class="thumbs" data-thumbs aria-live="polite"></ul>
+          </div>
+
+          <div class="form__row">
+            <label for="job-note">What needs doing?</label>
+            <textarea id="job-note" name="note" placeholder="e.g. Bedroom door catches on the carpet"></textarea>
+          </div>
+
+          <fieldset>
+            <legend>Where are you?</legend>
+            <div class="seg">
+              <label><input type="radio" name="area" value="Eaglescliffe TS16" checked><span>Eaglescliffe TS16</span></label>
+              <label><input type="radio" name="area" value="Yarm TS15"><span>Yarm TS15</span></label>
+              <label><input type="radio" name="area" value="Nearby"><span>Nearby</span></label>
+            </div>
+          </fieldset>
+
+          <div class="form__row form__row--half">
+            <div><label for="job-name">Name</label><input id="job-name" name="name" type="text" autocomplete="name" required></div>
+            <div><label for="job-phone">Mobile</label><input id="job-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+          </div>
+
+          <p class="form__error" data-job-error role="alert" hidden>Add your name and a mobile number so we can send the price.</p>
+          <button class="btn btn--hi btn--block" type="submit">Send for a price</button>
+          <p class="form__fine">Demo only. On the live site this opens WhatsApp with your photos attached. <span class="ph">[Phone / WhatsApp – owner to confirm]</span></p>
+          <div class="form__done" data-job-done role="status" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 2. How it works -->
+    <section class="sec how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 class="section-title" id="how-title">Three steps, no site visit needed for most jobs.</h2>
+        <ol class="steps">
+          <li><b>1</b><h3>Snap it</h3><p>One wide photo, one close-up. Add a line about what is wrong.</p></li>
+          <li><b>2</b><h3>Send it</h3><p>Straight to the handyman's phone, with your area attached.</p></li>
+          <li><b>3</b><h3>Price back</h3><p>A fixed price or a time estimate. <span class="ph">[Typical reply time – owner to confirm]</span></p></li>
+        </ol>
+        <p class="how__rates"><span class="ph">[Call-out / hourly / half-day rate – owner to confirm]</span> <span class="ph">[Materials policy – owner to confirm]</span></p>
+      </div>
+    </section>
+
+    <!-- 3. Next free slot -->
+    <section class="sec slots" id="slots" aria-labelledby="slots-title">
+      <div class="wrap">
+        <p class="eyebrow">This week</p>
+        <h2 class="section-title" id="slots-title">Next free slot</h2>
+        <ul class="week" data-week></ul>
+        <p class="slots__note"><span class="ph">[Demo availability – owner updates this by text]</span> <span class="ph">[Working hours – owner to confirm]</span></p>
+      </div>
+    </section>
+
+    <!-- 4. Before / after -->
+    <section class="sec work" id="work" aria-labelledby="work-title">
+      <div class="wrap work__grid">
+        <div>
+          <p class="eyebrow">The proof</p>
+          <h2 class="section-title" id="work-title">Drag to see the difference.</h2>
+          <p class="lead">Real before-and-after photos do more than any sales copy. This slider is ready for the owner's own phone snaps.</p>
+          <ul class="jobs">
+            <li>Shelving &amp; alcoves</li><li>Sticking doors</li><li>Silicone resealing</li><li>Curtain poles &amp; blinds</li><li>Flat-pack assembly</li>
+          </ul>
+          <p><span class="ph">[Exact service list &amp; exclusions – owner to confirm]</span></p>
+        </div>
+        <div>
+          <div class="ba" data-ba style="--pos: 50%">
+            <img src="../images/services-shelving-alcove.jpg" width="1200" height="896" alt="Illustrative image of finished alcove shelving" loading="lazy">
+            <div class="ba__before" aria-hidden="true"><img src="../images/services-shelving-alcove.jpg" width="1200" height="896" alt=""></div>
+            <span class="ba__tag ba__tag--before" aria-hidden="true">Before</span>
+            <span class="ba__tag ba__tag--after" aria-hidden="true">After</span>
+            <span class="ba__handle" aria-hidden="true"></span>
+            <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Before and after slider">
+          </div>
+          <p class="illus">Illustrative image with a simulated "before". The owner's real job photos replace it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Areas -->
+    <section class="sec areas" id="areas" aria-labelledby="areas-title">
+      <div class="wrap">
+        <p class="eyebrow">Where we work</p>
+        <h2 class="section-title" id="areas-title">Local means local.</h2>
+        <div class="areas__grid">
+          <div class="sign"><span class="sign__code">TS16</span><span class="sign__name">Eaglescliffe</span><span class="ph">[Exact TS16 sub-areas – owner to confirm]</span></div>
+          <div class="sign"><span class="sign__code">TS15</span><span class="sign__name">Yarm</span><span class="ph">[Exact TS15 sub-areas – owner to confirm]</span></div>
+        </div>
+        <p class="areas__more"><span class="ph">[Surrounding villages &amp; travel radius – owner to confirm]</span></p>
+        <a class="btn btn--ink" href="#snap">Send a photo of your job</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p class="foot__links">
+        <a href="../index.html">Concept A</a>
+        <a href="../b/index.html">Concept B</a>
+        <a href="../c/index.html">Concept C</a>
+        <a href="index.html" aria-current="page">Concept D</a>
+      </p>
+      <p><strong>Concept disclaimer:</strong> Concept design by Mark Aszkenasy – not the official website of Eaglescliffe &amp; Yarm Handyman. All bracketed items are placeholders awaiting owner confirmation. Availability shown is illustrative. No forms transmit data and no cookies are set.</p>
+      <p><strong>Illustrative image credit:</strong> Photographs shown on this concept page are AI-generated illustrative images used solely to demonstrate visual layout and do not depict the actual business, its work, products or premises.</p>
+    </div>
+  </footer>
+
+  <nav class="dock" aria-label="Quick actions"><a href="#slots">Free slots</a><a href="#areas">Areas</a><a class="dock__primary" href="#snap">Send a photo</a></nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
