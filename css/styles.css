@@ -1907,3 +1907,8 @@ h3 {
   .workbench-grid .patch-checker { order: 5; margin-top: 0.25rem; }
   .workbench-grid .bench-specs { order: 6; }
 }
+
+/* === Android Chrome / Samsung Internet & 360px Polish === */
+a, button, summary, label, input, select {
+  -webkit-tap-highlight-color: transparent;
+}
