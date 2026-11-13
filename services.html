@@ -30,7 +30,7 @@
           <a class="concept-switcher__pill" href="b/index.html">B</a>
           <a class="concept-switcher__pill" href="c/index.html">C</a>
         </nav>
-        <a href="#image-credits">Demo notes</a>
+        <a class="concept-banner__notes" href="#image-credits">Demo notes</a>
       </div>
     </div>
   </div>
@@ -125,11 +125,24 @@
       <div class="wrap">
         <!-- Live Job-List Sticky Strip -->
         <div class="job-picker-bar" role="status" aria-live="polite">
-          <p data-picker-summary>DOCKET STATUS // 0 jobs ticked — tick items below to carry them onto your quote form.</p>
+          <div class="job-picker-bar__meta">
+            <p data-picker-summary>DOCKET STATUS // 0 jobs ticked — tick items below to carry them onto your quote form.</p>
+            <span class="visit-scope-pill" data-visit-scope>Select 1+ jobs</span>
+          </div>
           <a class="btn btn--primary btn--sm" href="quote.html">
             <span>Continue to Quote Docket</span>
             <span class="job-badge" data-job-count hidden>0</span>
           </a>
+        </div>
+
+        <!-- 1-Tap Popular Odd-Job Bundles -->
+        <div class="bundle-strip" role="group" aria-label="1-tap popular odd-job bundles">
+          <span class="bundle-strip__label">1-Tap Popular Lists:</span>
+          <div class="bundle-pills">
+            <button type="button" class="bundle-pill" data-job-bundle="moving-in" aria-pressed="false">&#9889; Moving-In 4-Job List</button>
+            <button type="button" class="bundle-pill" data-job-bundle="doors-shelving" aria-pressed="false">&#128682; Doors &amp; Shelving Pair</button>
+            <button type="button" class="bundle-pill" data-job-bundle="reseal-tidy" aria-pressed="false">&#128703; Reseal &amp; Fixtures Tidy</button>
+          </div>
         </div>
 
         <div class="card-grid card-grid--2">
@@ -247,28 +260,55 @@
     <!-- Technical Plate + Honest Rates & Trade Boundaries -->
     <section class="section section--alt">
       <div class="wrap split">
-        <figure class="plate-card">
-          <div class="plate-card__bar">
-            <span class="plate-card__fig">FIG. 02 // INDOOR INSTALLATIONS</span>
-            <span>SPEC 16.2</span>
-          </div>
-          <div class="plate-card__media">
-            <img
-              src="images/services-shelving-alcove.jpg"
-              width="1200"
-              height="896"
-              alt="Solid oak floating shelves fitted into a living room chimney alcove with a spirit level and fixings on a dust sheet below"
-              loading="lazy"
-            >
-          </div>
-          <figcaption>
-            <span class="plate-card__caption-text">Alcove shelving &amp; tidy indoor installations with floors protected</span>
-            <span class="plate-card__meta-row">
-              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--iron-soft);">SPIRIT-LEVEL CHECKED</span>
-              <span class="illus-tag">Illustrative image</span>
-            </span>
-          </figcaption>
-        </figure>
+        <div style="display: flex; flex-direction: column; gap: 1.15rem;">
+          <figure class="plate-card" data-lightbox-trigger data-lightbox-src="images/services-shelving-alcove.jpg" data-lightbox-alt="Solid oak floating shelves fitted into a living room chimney alcove with a spirit level and fixings on a dust sheet below" data-lightbox-caption="Alcove shelving &amp; tidy indoor installations with floors protected" data-lightbox-spec="FIG. 02 // INDOOR INSTALLATIONS">
+            <div class="plate-card__bar">
+              <span class="plate-card__fig">FIG. 02 // INDOOR INSTALLATIONS</span>
+              <span>SPEC 16.2</span>
+            </div>
+            <div class="plate-card__media">
+              <img
+                src="images/services-shelving-alcove.jpg"
+                width="1200"
+                height="896"
+                alt="Solid oak floating shelves fitted into a living room chimney alcove with a spirit level and fixings on a dust sheet below"
+                loading="lazy"
+              >
+              <button type="button" class="photo-zoom-pill" aria-label="Enlarge Fig 02 Indoor Installations photograph">Inspect &#x2922;</button>
+            </div>
+            <figcaption>
+              <span class="plate-card__caption-text">Alcove shelving &amp; tidy indoor installations with floors protected</span>
+              <span class="plate-card__meta-row">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--iron-soft);">SPIRIT-LEVEL CHECKED</span>
+                <span class="illus-tag">Illustrative image</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="plate-card" data-lightbox-trigger data-lightbox-src="images/detail-1.jpg" data-lightbox-alt="Craftsman canvas tool roll, wood chisels, solid brass hinges and spirit level arranged neatly on an oak hallway floor" data-lightbox-caption="Sharp chisels, brass hinges &amp; precision hand tools laid out cleanly on a protected floor" data-lightbox-spec="FIG. 03 // IRONMONGERY &amp; TOOLS">
+            <div class="plate-card__bar">
+              <span class="plate-card__fig">FIG. 03 // IRONMONGERY &amp; TOOLS</span>
+              <span>SPEC 16.4</span>
+            </div>
+            <div class="plate-card__media">
+              <img
+                src="images/detail-1.jpg"
+                width="1200"
+                height="896"
+                alt="Craftsman canvas tool roll, wood chisels, solid brass hinges and spirit level arranged neatly on an oak hallway floor"
+                loading="lazy"
+              >
+              <button type="button" class="photo-zoom-pill" aria-label="Enlarge Fig 03 Ironmongery and Tools photograph">Inspect &#x2922;</button>
+            </div>
+            <figcaption>
+              <span class="plate-card__caption-text">Sharp chisels, brass hinges &amp; precision hand tools laid out cleanly on a protected floor</span>
+              <span class="plate-card__meta-row">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--iron-soft);">CLEAN HALLWAY PREP</span>
+                <span class="illus-tag">Illustrative image</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
 
         <div style="display: flex; flex-direction: column; gap: 1.15rem;">
           <div class="notice-box">

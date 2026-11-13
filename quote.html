@@ -30,7 +30,7 @@
           <a class="concept-switcher__pill" href="b/index.html">B</a>
           <a class="concept-switcher__pill" href="c/index.html">C</a>
         </nav>
-        <a href="#image-credits">Demo notes</a>
+        <a class="concept-banner__notes" href="#image-credits">Demo notes</a>
       </div>
     </div>
   </div>
@@ -126,13 +126,22 @@
         <div class="form-docket">
           <div class="form-docket__header">
             <span>WORKSHOP ENQUIRY DOCKET // TS16 &amp; TS15</span>
-            <span style="color: var(--brass-bright);">NO OBLIGATION ESTIMATE</span>
+            <span class="visit-scope-pill" data-visit-scope>Select 1+ jobs</span>
           </div>
 
           <div class="form-docket__body">
             <form id="quote-form" novalidate>
               <fieldset class="form-fieldset">
-                <legend class="form-legend">1. Ticked jobs on your docket <span class="hint" style="font-family: var(--font-sans); font-size: 0.84rem; font-weight: 500; color: var(--iron-soft);">(tick or untick any that apply)</span></legend>
+                <legend class="form-legend">1. Ticked jobs on your docket <span class="hint" style="font-family: var(--font-sans); font-size: 0.84rem; font-weight: 500; color: var(--iron-soft);">(tick individual jobs or use a 1-tap bundle)</span></legend>
+
+                <div class="bundle-strip" role="group" aria-label="1-tap popular odd-job bundles">
+                  <span class="bundle-strip__label">1-Tap Bundles:</span>
+                  <div class="bundle-pills">
+                    <button type="button" class="bundle-pill" data-job-bundle="moving-in" aria-pressed="false">&#9889; Moving-In 4-Job List</button>
+                    <button type="button" class="bundle-pill" data-job-bundle="doors-shelving" aria-pressed="false">&#128682; Doors &amp; Shelving Pair</button>
+                    <button type="button" class="bundle-pill" data-job-bundle="reseal-tidy" aria-pressed="false">&#128703; Reseal &amp; Fixtures Tidy</button>
+                  </div>
+                </div>
                 <div class="chip-checks">
                   <label class="chip-check" for="q-job-1">
                     <input id="q-job-1" type="checkbox" name="jobs" value="Ease sticking internal door">
@@ -259,19 +268,77 @@
               </p>
             </form>
 
-            <!-- Required Dummy Submit Feedback -->
+            <!-- Required Dummy Submit Feedback + Live Digital Enquiry Ticket -->
             <div class="demo-result" id="demo-result" tabindex="-1" role="status" aria-live="polite" hidden>
               <p class="demo-result__title">Demo only – in the live site this would go straight to Eaglescliffe &amp; Yarm Handyman.</p>
-              <p id="demo-summary"></p>
-              <p style="font-size: 0.86rem; color: var(--iron-soft);">
-                On the live website, this docket can arrive directly in the owner's email inbox (with optional photo attachments or WhatsApp tap-to-message).
-              </p>
+
+              <div class="receipt-ticket" id="demo-receipt-ticket">
+                <div class="receipt-ticket__head">
+                  <span>What Eaglescliffe &amp; Yarm Handyman Receives</span>
+                  <span class="receipt-ticket__ref" id="demo-ticket-ref">REF #EY-1042</span>
+                </div>
+                <dl class="receipt-ticket__grid">
+                  <div>
+                    <dt>Customer</dt>
+                    <dd id="demo-ticket-name">&mdash;</dd>
+                  </div>
+                  <div>
+                    <dt>Reply Contact</dt>
+                    <dd id="demo-ticket-contact">&mdash;</dd>
+                  </div>
+                  <div>
+                    <dt>Area &amp; Timing</dt>
+                    <dd id="demo-ticket-area">&mdash;</dd>
+                  </div>
+                  <div>
+                    <dt>Visit Scope</dt>
+                    <dd id="demo-ticket-scope">&mdash;</dd>
+                  </div>
+                  <div class="receipt-ticket__full">
+                    <dt>Ticked Odd Jobs</dt>
+                    <dd id="demo-ticket-jobs">&mdash;</dd>
+                  </div>
+                  <div class="receipt-ticket__full">
+                    <dt>Job Notes</dt>
+                    <dd id="demo-ticket-notes">&mdash;</dd>
+                  </div>
+                </dl>
+                <div class="receipt-ticket__actions">
+                  <button type="button" class="btn btn--secondary btn--sm" id="demo-copy-btn">Copy Summary</button>
+                  <button type="button" class="btn btn--pine btn--sm" id="demo-reset-btn">Reset Demo</button>
+                </div>
+              </div>
+
+              <p id="demo-summary" style="font-size: 0.84rem; color: var(--iron-soft); margin-top: 0.7rem;"></p>
             </div>
           </div>
         </div>
 
         <!-- Direct Contact & Helpful Workshop Notes Sidebar -->
         <aside style="display: flex; flex-direction: column; gap: 1.15rem;">
+          <figure class="plate-card" data-lightbox-trigger data-lightbox-src="images/detail-1.jpg" data-lightbox-alt="Craftsman canvas tool roll, wood chisels, solid brass hinges and spirit level arranged neatly on an oak hallway floor" data-lightbox-caption="Canvas tool roll, sharp chisels &amp; brass hardware laid out on protected oak flooring" data-lightbox-spec="FIG. 03 // WORKSHOP KIT">
+            <div class="plate-card__bar">
+              <span class="plate-card__fig">FIG. 03 // WORKSHOP KIT</span>
+              <span>SPEC 16.4</span>
+            </div>
+            <div class="plate-card__media">
+              <img
+                src="images/detail-1.jpg"
+                width="1200"
+                height="896"
+                alt="Craftsman canvas tool roll, wood chisels, solid brass hinges and spirit level arranged neatly on an oak hallway floor"
+                loading="lazy"
+              >
+              <button type="button" class="photo-zoom-pill" aria-label="Enlarge Workshop Kit photograph">Inspect &#x2922;</button>
+            </div>
+            <figcaption>
+              <span class="plate-card__caption-text">Canvas tool roll, sharp chisels &amp; brass hardware prepared cleanly on site</span>
+              <span class="plate-card__meta-row">
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--iron-soft);">TIDY VISIT</span>
+                <span class="illus-tag">Illustrative image</span>
+              </span>
+            </figcaption>
+          </figure>
           <div class="docket-card" id="contact-details">
             <span class="docket-card__num">DIRECT WORKSHOP CONTACT</span>
             <h2 style="font-size: 1.3rem;">Prefer to phone or message?</h2>

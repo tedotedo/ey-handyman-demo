@@ -36,6 +36,7 @@
 
   <!-- Sticky Sunlit App Header + Horizontal Pill-Tab Nav -->
   <header class="sunlit-header">
+    <div class="scroll-progress-hairline" id="c-scroll-progress" aria-hidden="true"></div>
     <div class="wrap sunlit-header__top">
       <a class="app-brand" href="#overview">
         <img class="app-brand__logo" src="../images/logo-mark.svg" width="34" height="34" alt="">
@@ -45,10 +46,13 @@
         </span>
       </a>
 
-      <a class="header-list-pill" href="#docket">
-        <span>Your list:</span>
-        <strong data-list-count>0</strong>
-      </a>
+      <div class="header-right-group">
+        <span class="visit-scope-chip" data-visit-scope>Select 1+ jobs</span>
+        <a class="header-list-pill" href="#docket">
+          <span>Your list:</span>
+          <strong data-list-count>0</strong>
+        </a>
+      </div>
     </div>
 
     <nav class="pill-tab-bar" aria-label="Single-page navigation">
@@ -82,7 +86,7 @@
             </div>
           </div>
 
-          <figure class="sunlit-photo">
+          <figure class="sunlit-photo" data-lightbox-trigger data-lightbox-src="../images/hero-home-repairs.jpg" data-lightbox-alt="Hands fitting a brass hinge onto a solid oak panelled door in a tidy hallway with a canvas tool bag and spirit level on a dust sheet" data-lightbox-caption="Careful indoor woodwork, spirit-level shelving &amp; clean dust-sheet preparation." data-lightbox-spec="OVERVIEW // INDOOR CRAFT">
             <div class="sunlit-photo__frame">
               <img
                 src="../images/hero-home-repairs.jpg"
@@ -92,10 +96,11 @@
                 fetchpriority="high"
               >
               <span class="illus-tag">Illustrative image</span>
+              <button type="button" class="photo-zoom-chip" aria-label="Enlarge hero indoor joinery photograph">Inspect &#x2922;</button>
             </div>
             <figcaption class="sunlit-photo__caption">
               <span>Careful indoor woodwork, spirit-level shelving &amp; clean dust-sheet preparation.</span>
-              <span>AI concept photo</span>
+              <span>Tap photo to enlarge</span>
             </figcaption>
           </figure>
         </div>
@@ -144,6 +149,19 @@
             <span>Review in Stepper</span>
             <span class="inline-count" data-list-count>0</span>
           </a>
+        </div>
+
+        <!-- 1-Tap Popular Odd-Job Bundles -->
+        <div class="c-bundles-bar" role="group" aria-label="1-tap popular odd-job bundles">
+          <div class="c-bundles-bar__head">
+            <span class="c-bundles-bar__label">1-Tap Popular Bundles:</span>
+            <span class="visit-scope-chip" data-visit-scope>Select 1+ jobs</span>
+          </div>
+          <div class="c-bundles-bar__pills">
+            <button type="button" class="c-bundle-pill" data-c-bundle="moving-in" aria-pressed="false">&#9889; Moving-In 4-Job List</button>
+            <button type="button" class="c-bundle-pill" data-c-bundle="doors-shelving" aria-pressed="false">&#128682; Doors &amp; Shelving Pair</button>
+            <button type="button" class="c-bundle-pill" data-c-bundle="reseal-tidy" aria-pressed="false">&#128703; Reseal &amp; Fixtures Tidy</button>
+          </div>
         </div>
 
         <!-- Category Filter Chips -->
@@ -267,7 +285,7 @@
           </div>
 
           <aside class="jobs-side">
-            <figure class="side-photo-card">
+            <figure class="side-photo-card" data-lightbox-trigger data-lightbox-src="../images/services-shelving-alcove.jpg" data-lightbox-alt="Solid oak floating shelves fitted into a living room chimney alcove with a spirit level and fixings on a dust sheet below" data-lightbox-caption="Alcove shelving &amp; wall anchors checked level with floors protected." data-lightbox-spec="INDOOR INSTALLATIONS // ALCOVES">
               <div class="side-photo-card__img">
                 <img
                   src="../images/services-shelving-alcove.jpg"
@@ -277,9 +295,27 @@
                   loading="lazy"
                 >
                 <span class="illus-tag">Illustrative image</span>
+                <button type="button" class="photo-zoom-chip" aria-label="Enlarge alcove shelving photograph">Inspect &#x2922;</button>
               </div>
               <figcaption>
                 <strong>Tidy indoor craft:</strong> Alcove shelving &amp; wall anchors checked level with floors protected.
+              </figcaption>
+            </figure>
+
+            <figure class="side-photo-card" data-lightbox-trigger data-lightbox-src="../images/detail-1.jpg" data-lightbox-alt="Craftsman canvas tool roll, wood chisels, solid brass hinges and spirit level arranged neatly on an oak hallway floor" data-lightbox-caption="Canvas tool roll, sharp wood chisels, solid brass hinges &amp; spirit level prepared cleanly on oak flooring." data-lightbox-spec="PRECISION HARDWARE // BRASS &amp; JOINERY">
+              <div class="side-photo-card__img">
+                <img
+                  src="../images/detail-1.jpg"
+                  width="1200"
+                  height="896"
+                  alt="Craftsman canvas tool roll, wood chisels, solid brass hinges and spirit level arranged neatly on an oak hallway floor"
+                  loading="lazy"
+                >
+                <span class="illus-tag">Illustrative image</span>
+                <button type="button" class="photo-zoom-chip" aria-label="Enlarge craftsman tool roll and brass hinges photograph">Inspect &#x2922;</button>
+              </div>
+              <figcaption>
+                <strong>Joinery &amp; ironmongery:</strong> Sharp chisels, solid brass hinges &amp; hallway floor protection.
               </figcaption>
             </figure>
 
@@ -341,7 +377,7 @@
             <button type="button" class="btn btn--soft btn--compact" data-jump-area="yarm">Select TS15 in Stepper &rarr;</button>
           </article>
 
-          <figure class="area-photo-card">
+          <figure class="area-photo-card" data-lightbox-trigger data-lightbox-src="../images/areas-brick-houses.jpg" data-lightbox-alt="Warm red-brick period townhouses with pantile roofs beside a tree-lined riverside walk in evening sunlight" data-lightbox-caption="Serving period brick townhouses, cottages &amp; modern family estates across TS16 &amp; TS15." data-lightbox-spec="SERVICE PATCH // TS16 &amp; TS15">
             <div class="area-photo-card__img">
               <img
                 src="../images/areas-brick-houses.jpg"
@@ -351,6 +387,7 @@
                 loading="lazy"
               >
               <span class="illus-tag">Illustrative image</span>
+              <button type="button" class="photo-zoom-chip" aria-label="Enlarge riverside brick townhouses photograph">Inspect &#x2922;</button>
             </div>
             <figcaption>
               <span>Outlying villages (Aislaby, Ingleby Barwick, Hilton, Hutton Rudby): <span class="ph">[Surrounding villages &amp; travel radius – owner to confirm]</span></span>
@@ -401,8 +438,19 @@
             <!-- STEP 1: Select Jobs -->
             <div class="step-pane" id="step-pane-1" data-step-pane="1">
               <fieldset class="clean-fieldset">
-                <legend class="pane-title">1. Which small jobs are on your list?</legend>
-                <p class="pane-hint">Tick one or several jobs below (synced with the trade list above), or type a custom job.</p>
+                <div class="pane-head-row">
+                  <legend class="pane-title">1. Which small jobs are on your list?</legend>
+                  <span class="visit-scope-chip" data-visit-scope>Select 1+ jobs</span>
+                </div>
+                <p class="pane-hint">Tick one or several jobs below, tap a 1-tap popular bundle, or type a custom job.</p>
+
+                <div class="c-bundles-bar c-bundles-bar--compact" role="group" aria-label="1-tap popular odd-job bundles">
+                  <div class="c-bundles-bar__pills">
+                    <button type="button" class="c-bundle-pill" data-c-bundle="moving-in" aria-pressed="false">&#9889; Moving-In 4-Job List</button>
+                    <button type="button" class="c-bundle-pill" data-c-bundle="doors-shelving" aria-pressed="false">&#128682; Doors &amp; Shelving Pair</button>
+                    <button type="button" class="c-bundle-pill" data-c-bundle="reseal-tidy" aria-pressed="false">&#128703; Reseal &amp; Fixtures Tidy</button>
+                  </div>
+                </div>
 
                 <div class="step-checks" id="step-1-checks">
                   <label class="step-check" for="c-j1">
@@ -573,11 +621,49 @@
             </div>
           </form>
 
-          <!-- Valid Submit Feedback -->
+          <!-- Valid Submit Feedback + Live Digital Enquiry Ticket -->
           <div class="submit-success" id="c-submit-success" tabindex="-1" role="status" aria-live="polite" hidden>
             <p class="submit-success__exact">Demo only – in the live site this would go straight to Eaglescliffe &amp; Yarm Handyman.</p>
+
+            <div class="c-owner-ticket" id="c-owner-ticket">
+              <div class="c-owner-ticket__head">
+                <span>What Eaglescliffe &amp; Yarm Handyman Receives</span>
+                <span class="c-owner-ticket__ref" id="c-ticket-ref">REF #EY-3018</span>
+              </div>
+              <dl class="c-owner-ticket__grid">
+                <div>
+                  <dt>Customer</dt>
+                  <dd id="c-ticket-name">&mdash;</dd>
+                </div>
+                <div>
+                  <dt>Reply Contact</dt>
+                  <dd id="c-ticket-contact">&mdash;</dd>
+                </div>
+                <div>
+                  <dt>Area &amp; Timing</dt>
+                  <dd id="c-ticket-area">&mdash;</dd>
+                </div>
+                <div>
+                  <dt>Visit Scope</dt>
+                  <dd id="c-ticket-scope">&mdash;</dd>
+                </div>
+                <div class="c-owner-ticket__full">
+                  <dt>Selected Odd Jobs</dt>
+                  <dd id="c-ticket-jobs">&mdash;</dd>
+                </div>
+                <div class="c-owner-ticket__full">
+                  <dt>Job Notes</dt>
+                  <dd id="c-ticket-notes">&mdash;</dd>
+                </div>
+              </dl>
+              <div class="c-owner-ticket__actions">
+                <button type="button" class="btn btn--green btn--compact" id="c-copy-summary-btn">Copy Summary</button>
+                <button type="button" class="btn btn--soft btn--compact" id="c-reset-demo-btn">Reset Demo</button>
+                <button type="button" class="btn btn--soft btn--compact" id="c-edit-again-btn">Edit Steps</button>
+              </div>
+            </div>
+
             <p class="submit-success__detail" id="c-submit-detail"></p>
-            <button type="button" class="btn btn--soft btn--compact" id="c-edit-again-btn">Edit docket or test again</button>
           </div>
         </div>
       </div>
@@ -617,7 +703,7 @@
 
       <div class="footer-legal">
         <p><strong>Concept disclaimer:</strong> Concept design by Mark Aszkenasy – not the official website of Eaglescliffe &amp; Yarm Handyman. Built as a speculative pitch demo; no forms transmit data and no cookies are set.</p>
-        <p><strong>Illustrative image credit:</strong> All photographs (<code>hero-home-repairs.jpg</code>, <code>services-shelving-alcove.jpg</code>, <code>areas-brick-houses.jpg</code>) are AI-generated illustrative images created specifically for this concept demo ("Illustrative image"); none depict Eaglescliffe &amp; Yarm Handyman, its personnel, or client homes.</p>
+        <p><strong>Illustrative image credit:</strong> All photographs (<code>hero-home-repairs.jpg</code>, <code>services-shelving-alcove.jpg</code>, <code>areas-brick-houses.jpg</code>, <code>detail-1.jpg</code>) are AI-generated illustrative images created specifically for this concept demo ("Illustrative image"); none depict Eaglescliffe &amp; Yarm Handyman, its personnel, or client homes.</p>
         <p><strong>Design by Mark Aszkenasy</strong></p>
       </div>
     </div>

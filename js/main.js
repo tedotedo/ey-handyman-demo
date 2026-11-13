@@ -11,6 +11,59 @@
   var STORAGE_KEY = "ey_demo_jobs_v2";
   var PATCH_KEY = "ey_demo_patch_v2";
   var memoryJobs = [];
+  var toastTimer = null;
+
+  var JOB_BUNDLES = {
+    "moving-in": {
+      label: "Moving-In 4-Job List",
+      jobs: [
+        "Flat-pack wardrobe / chest assembly",
+        "Hang heavy mirror, blinds or TV bracket",
+        "Put up alcove shelving",
+        "Ease sticking internal door"
+      ]
+    },
+    "doors-shelving": {
+      label: "Doors & Shelving Pair",
+      jobs: [
+        "Ease sticking internal door",
+        "Put up alcove shelving"
+      ]
+    },
+    "reseal-tidy": {
+      label: "Reseal & Fixtures Tidy",
+      jobs: [
+        "Fix dripping tap or re-silicone bath",
+        "Draught-proofing & door furniture",
+        "Hang heavy mirror, blinds or TV bracket"
+      ]
+    }
+  };
+
+  function getVisitScope(count) {
+    if (count <= 0) return "Select 1+ jobs";
+    if (count === 1) return "Quick Single Repair";
+    if (count <= 3) return "2\u20133 Hr Visit";
+    return "Half-Day Odd-Job Blitz";
+  }
+
+  function showMicroToast(message) {
+    var toast = document.getElementById("ey-micro-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "ey-micro-toast";
+      toast.className = "micro-toast";
+      toast.setAttribute("role", "status");
+      toast.setAttribute("aria-live", "polite");
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add("is-visible");
+    if (toastTimer) window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(function () {
+      toast.classList.remove("is-visible");
+    }, 2600);
+  }
 
   var PATCH_DATA = {
     eaglescliffe: {
@@ -175,7 +228,55 @@
           ? "DOCKET STATUS // 1 job stamped onto your quote docket."
           : "DOCKET STATUS // " + count + " jobs stamped onto your quote docket.";
     }
+
+    var scopeText = getVisitScope(count);
+    document.querySelectorAll("[data-visit-scope]").forEach(function (el) {
+      el.textContent = scopeText;
+      el.classList.toggle("is-active", count > 0);
+    });
+
+    var jobSet = new Set(jobs);
+    document.querySelectorAll("[data-job-bundle]").forEach(function (btn) {
+      var key = btn.getAttribute("data-job-bundle");
+      var def = JOB_BUNDLES[key];
+      if (!def) return;
+      var allActive = def.jobs.every(function (j) { return jobSet.has(j); });
+      btn.setAttribute("aria-pressed", allActive ? "true" : "false");
+    });
   }
+
+  function syncAllPageCheckboxes(jobs) {
+    var set = new Set(jobs);
+    document.querySelectorAll("input[data-hero-job], input[data-service-job], #quote-form input[name='jobs']").forEach(function (box) {
+      box.checked = set.has(box.value);
+      var row = box.closest(".clipboard-row");
+      if (row) {
+        row.classList.toggle("is-ticked", box.checked);
+      }
+    });
+  }
+
+  document.querySelectorAll("[data-job-bundle]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var key = btn.getAttribute("data-job-bundle");
+      var def = JOB_BUNDLES[key];
+      if (!def) return;
+      var current = new Set(getSavedJobs());
+      var alreadyAll = def.jobs.every(function (j) { return current.has(j); });
+      if (alreadyAll) {
+        def.jobs.forEach(function (j) { current.delete(j); });
+      } else {
+        def.jobs.forEach(function (j) { current.add(j); });
+      }
+      var updated = saveJobs(Array.from(current));
+      syncAllPageCheckboxes(updated);
+      updateJobUI(updated);
+      showMicroToast(
+        (alreadyAll ? "Cleared bundle: " : "\u26A1 Added " + def.label + " \u00B7 ") +
+        getVisitScope(updated.length)
+      );
+    });
+  });
 
   /* ------------------------------------------------------------------------
      3. Hero Tactile Fridge Odd-Job Clipboard (index.html)
@@ -199,6 +300,12 @@
         syncRowVisual(box);
         var updated = toggleSavedJob(box.value, box.checked);
         updateJobUI(updated);
+        showMicroToast(
+          (box.checked ? "\u2713 Added: " : "Removed: ") +
+          box.value +
+          " \u00B7 " +
+          getVisitScope(updated.length)
+        );
       });
     });
 
@@ -211,6 +318,7 @@
         });
         var cleared = saveJobs([]);
         updateJobUI(cleared);
+        showMicroToast("Clipboard cleared");
       });
     }
   }
@@ -268,6 +376,12 @@
       box.addEventListener("change", function () {
         var updated = toggleSavedJob(box.value, box.checked);
         updateJobUI(updated);
+        showMicroToast(
+          (box.checked ? "\u2713 Added: " : "Removed: ") +
+          box.value +
+          " \u00B7 " +
+          getVisitScope(updated.length)
+        );
       });
     });
   }
@@ -307,6 +421,12 @@
       box.addEventListener("change", function () {
         var updated = toggleSavedJob(box.value, box.checked);
         updateJobUI(updated);
+        showMicroToast(
+          (box.checked ? "\u2713 Added: " : "Removed: ") +
+          box.value +
+          " \u00B7 " +
+          getVisitScope(updated.length)
+        );
       });
     });
 
@@ -371,19 +491,43 @@
           return c.value;
         });
 
+      var postcodeInput = document.getElementById("q-postcode");
+      var timingSelect = document.getElementById("q-timing");
+      var areaText = areaSelect.options[areaSelect.selectedIndex].text;
+      var postcodeVal = postcodeInput && postcodeInput.value.trim() ? " (" + postcodeInput.value.trim().toUpperCase() + ")" : "";
+      var timingText = timingSelect ? timingSelect.options[timingSelect.selectedIndex].text : "Flexible";
+      var jobsText = ticked.length ? ticked.join(" \u00B7 ") : "General home repair docket (see notes)";
+      var scopeBadge = getVisitScope(ticked.length || 1);
+      var refCode = "EY-" + String(1000 + ((nameInput.value.trim().length * 137 + detailsInput.value.trim().length * 29) % 8999));
+
+      var setTxt = function (id, val) {
+        var node = document.getElementById(id);
+        if (node) node.textContent = val;
+      };
+
+      setTxt("demo-ticket-ref", "REF #" + refCode);
+      setTxt("demo-ticket-name", nameInput.value.trim());
+      setTxt("demo-ticket-contact", contactInput.value.trim());
+      setTxt("demo-ticket-area", areaText + postcodeVal + " \u2014 " + timingText);
+      setTxt("demo-ticket-scope", scopeBadge);
+      setTxt("demo-ticket-jobs", jobsText);
+      setTxt("demo-ticket-notes", detailsInput.value.trim());
+
+      quoteForm.dataset.plainReceipt = [
+        "Eaglescliffe & Yarm Handyman — Enquiry Receipt (#" + refCode + ")",
+        "Customer: " + nameInput.value.trim(),
+        "Contact: " + contactInput.value.trim(),
+        "Area & Timing: " + areaText + postcodeVal + " — " + timingText,
+        "Visit Scope: " + scopeBadge,
+        "Selected Jobs: " + jobsText,
+        "Notes: " + detailsInput.value.trim()
+      ].join("\n");
+
       var resultBox = document.getElementById("demo-result");
       var summarySlot = document.getElementById("demo-summary");
       if (summarySlot) {
-        var areaText = areaSelect.options[areaSelect.selectedIndex].text;
-        var jobsText = ticked.length ? ticked.join("; ") : "General home repair docket";
         summarySlot.textContent =
-          "Docket preview: " +
-          nameInput.value.trim() +
-          " (" +
-          areaText +
-          ") \u2014 " +
-          jobsText +
-          ".";
+          "On the live website, this structured docket arrives straight in the owner\u2019s inbox with optional photo attachments.";
       }
 
       if (resultBox) {
@@ -391,7 +535,152 @@
         resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
         resultBox.focus();
       }
+      showMicroToast("\u2713 Demo docket stamped (#" + refCode + ")");
     });
+
+    var copyBtn = document.getElementById("demo-copy-btn");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        var text = quoteForm.dataset.plainReceipt || "";
+        if (navigator.clipboard && navigator.clipboard.writeText && text) {
+          navigator.clipboard.writeText(text).then(function () {
+            copyBtn.textContent = "\u2713 Summary Copied";
+            showMicroToast("\u2713 Enquiry summary copied to clipboard");
+            window.setTimeout(function () { copyBtn.textContent = "Copy Summary"; }, 2200);
+          }).catch(function () {
+            showMicroToast("Summary ready to copy");
+          });
+        } else {
+          copyBtn.textContent = "\u2713 Summary Ready";
+          showMicroToast("\u2713 Summary ready");
+        }
+      });
+    }
+
+    var resetBtn = document.getElementById("demo-reset-btn");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        quoteForm.reset();
+        saveJobs([]);
+        syncAllPageCheckboxes([]);
+        updateJobUI([]);
+        var resultBox = document.getElementById("demo-result");
+        if (resultBox) resultBox.hidden = true;
+        quoteForm.scrollIntoView({ behavior: "smooth", block: "start" });
+        showMicroToast("Demo docket reset");
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------------
+     7. Accessible Native <dialog> Photo Lightbox + Dock Auto-Clearance
+     ------------------------------------------------------------------------ */
+  var lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
+  if (lightboxTriggers.length > 0 && typeof HTMLDialogElement !== "undefined") {
+    var dialog = document.createElement("dialog");
+    dialog.className = "photo-lightbox";
+    dialog.id = "photo-lightbox";
+    dialog.setAttribute("aria-label", "Workshop photograph close-up");
+
+    var isQuotePage = Boolean(document.getElementById("quote-form"));
+    var ctaHref = isQuotePage ? "#quote-form" : "quote.html";
+
+    dialog.innerHTML =
+      '<div class="photo-lightbox__bar">' +
+        '<span class="photo-lightbox__spec" data-lb-spec>WORKSHOP PLATE</span>' +
+        '<button type="button" class="photo-lightbox__close" data-lb-close aria-label="Close photo preview">\u2715</button>' +
+      '</div>' +
+      '<div class="photo-lightbox__stage">' +
+        '<img data-lb-img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">' +
+      '</div>' +
+      '<div class="photo-lightbox__foot">' +
+        '<div class="photo-lightbox__meta">' +
+          '<p class="photo-lightbox__caption" data-lb-caption></p>' +
+          '<div><span class="illus-tag">Illustrative image</span></div>' +
+        '</div>' +
+        '<a class="btn btn--primary btn--sm" data-lb-cta href="' + ctaHref + '">Add to Quote Docket \u2192</a>' +
+      '</div>';
+
+    document.body.appendChild(dialog);
+
+    var lbImg = dialog.querySelector("[data-lb-img]");
+    var lbSpec = dialog.querySelector("[data-lb-spec]");
+    var lbCap = dialog.querySelector("[data-lb-caption]");
+    var lbClose = dialog.querySelector("[data-lb-close]");
+    var lbCta = dialog.querySelector("[data-lb-cta]");
+    var lastTrigger = null;
+
+    var openLightbox = function (el) {
+      lastTrigger = el;
+      var src = el.getAttribute("data-lightbox-src") || "";
+      var alt = el.getAttribute("data-lightbox-alt") || "";
+      var cap = el.getAttribute("data-lightbox-caption") || "";
+      var spec = el.getAttribute("data-lightbox-spec") || "WORKSHOP PLATE";
+      if (lbImg) {
+        lbImg.src = src;
+        lbImg.alt = alt;
+      }
+      if (lbSpec) lbSpec.textContent = spec;
+      if (lbCap) lbCap.textContent = cap;
+      if (typeof dialog.showModal === "function" && !dialog.open) {
+        dialog.showModal();
+      }
+    };
+
+    var closeLightbox = function () {
+      if (dialog.open) dialog.close();
+      if (lastTrigger && typeof lastTrigger.focus === "function") {
+        lastTrigger.focus();
+      }
+    };
+
+    lbClose.addEventListener("click", closeLightbox);
+    lbCta.addEventListener("click", function () {
+      if (dialog.open) dialog.close();
+    });
+    dialog.addEventListener("click", function (ev) {
+      if (ev.target === dialog) {
+        closeLightbox();
+      }
+    });
+
+    lightboxTriggers.forEach(function (el) {
+      if (!el.hasAttribute("tabindex")) {
+        el.setAttribute("tabindex", "0");
+      }
+      el.addEventListener("click", function (ev) {
+        if (ev.target.closest("a")) return;
+        openLightbox(el);
+      });
+      el.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          openLightbox(el);
+        }
+      });
+    });
+  }
+
+  var mobileDock = document.querySelector(".mobile-dock");
+  if (mobileDock && "IntersectionObserver" in window) {
+    var activeZones = new Set();
+    var dockObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            activeZones.add(entry.target);
+          } else {
+            activeZones.delete(entry.target);
+          }
+        });
+        mobileDock.classList.toggle("is-cleared", activeZones.size > 0);
+      },
+      { threshold: 0.06 }
+    );
+    var qForm = document.getElementById("quote-form");
+    var sFooter = document.querySelector(".site-footer");
+    if (qForm) dockObserver.observe(qForm);
+    if (sFooter) dockObserver.observe(sFooter);
   }
 
   updateJobUI(getSavedJobs());
