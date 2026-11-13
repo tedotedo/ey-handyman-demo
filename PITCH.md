@@ -63,3 +63,22 @@ Every bracketed `[...]` item in the concept site that needs a quick yes/no or fi
 - [ ] **Registered Business / Sole Trader Footer Details (`[Registered town / base details – owner to confirm]`):** Trading name / sole trader or Ltd details if applicable, and preferred domain (`eyhandyman.co.uk`).
 - [ ] **Photos (Optional post-launch upgrade):** Swap or supplement the 3 `"Illustrative image"` demo photographs with the owner's own photos of completed work if available.
 
+---
+
+## Set D — Send a Photo, Get a Price (`/d/`)
+
+- **Live Concept URL:** https://tedotedo.github.io/ey-handyman-demo/d/
+- **What it is:** The whole site is one action: snap the job, say where you are, get a price back. Van-livery yellow and black.
+- **Reach it from any page:** tap **D** in the Concept switcher in the top banner.
+
+### 3-Tap Phone Demo (Set D)
+1. On the **Job ticket**, tap **Tap to add photos** and pick one or two pictures from your phone: thumbnails appear on the ticket.
+2. Scroll to **Next free slot** to show the week strip with the first free slot ringed.
+3. Drag the **before / after** slider.
+
+### One-Line Pitch
+> *"Most people don't know what to call the job. They just want to show you. This lets them."*
+
+### Know Before You Show
+- The availability week is illustrative. The "before" picture is the same illustrative photo greyed out, labelled on the page. Photos chosen in the demo stay on the phone; nothing is uploaded.
+- Demo only: no form sends anything, and unknown details stay as bracketed `[...]` placeholders for the owner to confirm.
