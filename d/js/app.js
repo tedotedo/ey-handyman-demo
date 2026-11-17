@@ -19,7 +19,6 @@
       var img = document.createElement('img');
       img.alt = 'Photo ' + (i + 1) + ' of your job';
       img.src = URL.createObjectURL(f);
-      img.onload = function () { URL.revokeObjectURL(img.src); };
       li.appendChild(img);
       thumbs.appendChild(li);
     });
@@ -36,7 +35,34 @@
     done.hidden = false;
     done.textContent = 'Ticket ' + no + ' · ' + count + (count === 1 ? ' photo' : ' photos') + ' · ' + f.area.value +
       ' — demo only, nothing has been sent.';
+    tearOff(f);
   });
+
+  /* Customer copy: tears off the ticket and gets stamped with the next free slot */
+  function tearOff(f) {
+    var stub = document.querySelector('[data-stub]');
+    var next = document.querySelector('[data-week] .next');
+    var slot = next ? next.querySelector('.d').textContent + ' · ' + next.querySelector('.s').textContent.replace(' free', '') : 'We\'ll ring you';
+    stub.innerHTML =
+      '<div class="stub__head"><span>Customer copy</span><b></b></div>' +
+      '<ul class="stub__pics"></ul>' +
+      '<p class="stub__job"></p>' +
+      '<p class="stub__who"></p>' +
+      '<div class="stub__stamp" aria-hidden="true"><span>Received</span><b></b><small>Next free</small></div>' +
+      '<p class="stub__fine">Demo only, nothing has been sent.</p>';
+    stub.querySelector('.stub__head b').textContent = 'No. ' + no;
+    var pics = stub.querySelector('.stub__pics');
+    Array.prototype.forEach.call(thumbs.querySelectorAll('img'), function (im, i) {
+      if (i > 2) return; var li = document.createElement('li'); var c = document.createElement('img'); c.src = im.src; c.alt = ''; li.appendChild(c); pics.appendChild(li);
+    });
+    if (!pics.children.length) pics.remove();
+    stub.querySelector('.stub__job').textContent = f.note.value.trim() || 'Job described on the phone';
+    stub.querySelector('.stub__who').textContent = f.name.value.trim() + ' · ' + f.area.value;
+    stub.querySelector('.stub__stamp b').textContent = slot;
+    stub.setAttribute('aria-label', 'Customer copy ' + no + ', next free ' + slot);
+    stub.hidden = false; stub.classList.remove('is-torn'); void stub.offsetWidth; stub.classList.add('is-torn');
+    if (window.matchMedia('(max-width: 859px)').matches) setTimeout(function () { stub.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 250);
+  }
 
   /* Next free slot: illustrative pattern over the next six working days */
   var week = document.querySelector('[data-week]');

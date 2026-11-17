@@ -274,3 +274,22 @@ input:focus-visible + .thumbs, #job-photos:focus-visible ~ .thumbs { outline: no
   .work__grid { grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: center; }
   .areas__grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* Customer copy: tears off the job ticket */
+.stub { position: relative; background: #fff; border: 3px solid var(--ink); border-top: 0; border-radius: 0 0 16px 16px; padding: 1.1rem 1rem 1rem; box-shadow: 8px 8px 0 var(--ink); margin: -0.75rem 0 1rem; transform-origin: top left; }
+.stub::before { content: ''; position: absolute; left: -3px; right: -3px; top: -3px; height: 6px; background: radial-gradient(circle at 6px 0, var(--paper) 5px, transparent 5.5px) 0 0 / 14px 6px repeat-x; }
+.stub.is-torn { animation: stub-tear 1s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes stub-tear { 0% { transform: translateY(-30px); opacity: 0; } 45% { transform: translateY(6px) rotate(-1.5deg); opacity: 1; } 100% { transform: translateY(14px) rotate(-1.5deg); opacity: 1; } }
+.stub__head { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; border-bottom: 2px dashed var(--rule); padding-bottom: .5rem; margin-bottom: .7rem; }
+.stub__pics { display: flex; gap: .4rem; margin: 0 0 .7rem; padding: 0; list-style: none; }
+.stub__pics img { width: 4.2rem; height: 4.2rem; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); display: block; }
+.stub__job { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.15; margin: 0 0 .25rem; max-width: 62%; }
+.stub__who { font-size: .9rem; color: var(--ink-soft); margin: 0; max-width: 62%; }
+.stub__stamp { position: absolute; right: .9rem; bottom: 2.3rem; width: 7.4rem; padding: .45rem .3rem; border: 3px solid #C8261B; border-radius: 10px; color: #C8261B; text-align: center; font-family: var(--font-mono); text-transform: uppercase; transform: rotate(-9deg); opacity: 0; mix-blend-mode: multiply; }
+.stub__stamp span { display: block; font-size: .95rem; font-weight: 800; letter-spacing: .12em; }
+.stub__stamp b { display: block; font-size: .78rem; margin-top: .15rem; }
+.stub__stamp small { display: block; font-size: .6rem; letter-spacing: .1em; }
+.stub.is-torn .stub__stamp { animation: stamp .45s .85s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes stamp { from { opacity: 0; transform: rotate(-9deg) scale(2.2); } to { opacity: .92; transform: rotate(-9deg) scale(1); } }
+.stub__fine { font-size: .72rem; color: var(--ink-soft); margin: .8rem 0 0; }
+@media (prefers-reduced-motion: reduce) { .stub.is-torn, .stub.is-torn .stub__stamp { animation: none; opacity: 1; } .stub__stamp { opacity: .92; } }
