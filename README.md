@@ -4,7 +4,6 @@ Speculative draft concept website prepared by **Mark Aszkenasy** (`tedotedo`).
 **Not the official website of Eaglescliffe & Yarm Handyman.**
 
 - **Live Demo:** https://tedotedo.github.io/ey-handyman-demo/
-- **Pitch & Placeholder Notes:** See [`PITCH.md`](./PITCH.md)
 
 ## Structure
 - `index.html` — Home overview, core repair categories & booking steps
